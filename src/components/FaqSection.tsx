@@ -31,7 +31,7 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18] mb-5">
-            Informācija, kas var noderēt pirms pirmās tikšanās
+            Jautājumi un atbildes
           </h2>
 
           <p className="text-base sm:text-lg text-[#455260] leading-relaxed">
