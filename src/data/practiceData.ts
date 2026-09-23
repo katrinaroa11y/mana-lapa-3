@@ -18,16 +18,15 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'individuala-terapija',
     title: 'Individuālas konsultācijas',
-    subtitle: 'Atbalsts emocionālajai labsajūtai, sevis izpratnei un personīgo mērķu sasniegšanai',
+    subtitle: 'Atbalsts emocionālajai labsajūtai, sevis izpratnei un personīgo mērķu sasniegšanai. Iespēja kombinēt individuālas konsultācijas ar EMDR un shēmu terapijas metodēm',
     tag: 'Tiešsaistē',
     duration: '50 minūtes',
     format: 'Tiešsaistē',
     benefits: [
-      'Emociju regulācijas un stresa mazināšanas tehnikas (meditācija, vizualizācija, vadīta elpošana u.c. prakses)',
       'Pašvērtējuma un robežu stiprināšana',
       'Izdegšanas un trauksmes mazināšana',
-      'Mērķu izvirzīšana un apzināšanās, kādi soļi jāveic ceļā uz tiem',
-      'Emocionālais un informatīvais atbalsts grūtībās'
+      'Pašsajūtas uzlabošana un veiksmīgāka emociju regulācija',
+      'Stresa mazināšanas tehnikas (vizualizācija, vadītas elpošanas prakses u.c.)'
     ],
     price: '50 € / sesija',
     recommendedFor: 'Pieaugušajiem, kuri saskaras ar trauksmi, stresa vadību, dzīves krīzēm vai vēlas padziļināti iepazīt sevi.'
