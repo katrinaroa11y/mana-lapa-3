@@ -43,11 +43,11 @@ export const ApproachSection: React.FC = () => {
             <div className="flex items-center space-x-3 mb-4">
               <span className="w-8 h-px bg-[#668261]" />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#668261]">
-                Metodes un izglītība
+                Izglītība un metodes
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18] mb-6">
-              Metodes
+              Izglītība un metodes
             </h2>
             <p className="text-base sm:text-lg text-[#455260] leading-relaxed">
               Konsultēšanas procesā katram individuāli tiek piemērotas atbilstošākās metodes, tās saskaņojot ar klienta vēlmēm un vajadzībām.
