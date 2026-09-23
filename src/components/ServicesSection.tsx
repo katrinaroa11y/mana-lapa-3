@@ -25,7 +25,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18]">
-            Profesionāls atbalsts izaugsmes un emocionālās veselības ceļā
+            Atbalsta iespējas
           </h2>
         </div>
 
