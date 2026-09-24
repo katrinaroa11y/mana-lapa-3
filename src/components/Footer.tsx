@@ -5,11 +5,41 @@ import { ShieldCheck, ArrowUp, Instagram } from 'lucide-react';
 interface FooterProps {
   onOpenPrivacy: () => void;
   onOpenBooking: () => void;
+  onNavigateBlogs?: () => void;
+  onNavigateHome?: (sectionId?: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenBooking }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onOpenPrivacy,
+  onOpenBooking,
+  onNavigateBlogs,
+  onNavigateHome
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href === '/blogs') {
+      if (onNavigateBlogs) {
+        onNavigateBlogs();
+      } else {
+        window.history.pushState({}, '', '/blogs');
+        window.dispatchEvent(new Event('popstate'));
+      }
+      return;
+    }
+
+    const targetId = href.replace('#', '');
+    if (onNavigateHome) {
+      onNavigateHome(targetId);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -47,32 +77,42 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenBooking }) 
 
           {/* Navigation Links Column */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="font-serif text-base font-medium text-[#FAF8F5]">
+            <h4 className="font-serif text-base font-bold text-[#FAF8F5]">
               Mājaslapas sadaļas
             </h4>
             <ul className="space-y-2.5 text-sm text-[#C8D1DA]">
               <li>
-                <a href="#par-mani" className="hover:text-[#FAF8F5] transition-colors">
+                <a href="#par-mani" onClick={(e) => handleLinkClick(e, '#par-mani')} className="hover:text-[#FAF8F5] transition-colors">
                   Par Katrīnu Rozenbahu
                 </a>
               </li>
               <li>
-                <a href="#pakalpojumi" className="hover:text-[#FAF8F5] transition-colors">
+                <a href="#pakalpojumi" onClick={(e) => handleLinkClick(e, '#pakalpojumi')} className="hover:text-[#FAF8F5] transition-colors">
                   Pakalpojumi un Izmaksas
                 </a>
               </li>
               <li>
-                <a href="#pieeja" className="hover:text-[#FAF8F5] transition-colors">
-                  Metodes un izglītība
+                <a href="#pieeja" onClick={(e) => handleLinkClick(e, '#pieeja')} className="hover:text-[#FAF8F5] transition-colors">
+                  Darba metodes
                 </a>
               </li>
               <li>
-                <a href="#buj" className="hover:text-[#FAF8F5] transition-colors">
+                <a href="#izglitiba" onClick={(e) => handleLinkClick(e, '#izglitiba')} className="hover:text-[#FAF8F5] transition-colors">
+                  Izglītība
+                </a>
+              </li>
+              <li>
+                <a href="/blogs" onClick={(e) => handleLinkClick(e, '/blogs')} className="hover:text-[#FAF8F5] transition-colors">
+                  Psiholoģijas blogs
+                </a>
+              </li>
+              <li>
+                <a href="#buj" onClick={(e) => handleLinkClick(e, '#buj')} className="hover:text-[#FAF8F5] transition-colors">
                   Biežāk uzdotie jautājumi (BUJ)
                 </a>
               </li>
               <li>
-                <a href="#kontakti" className="hover:text-[#FAF8F5] transition-colors">
+                <a href="#kontakti" onClick={(e) => handleLinkClick(e, '#kontakti')} className="hover:text-[#FAF8F5] transition-colors">
                   Saziņa
                 </a>
               </li>
@@ -81,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenBooking }) 
 
           {/* Fast Actions & Privacy Column */}
           <div className="md:col-span-4 space-y-4">
-            <h4 className="font-serif text-base font-medium text-[#FAF8F5]">
+            <h4 className="font-serif text-base font-bold text-[#FAF8F5]">
               Pieraksts & Juridiskā informācija
             </h4>
 

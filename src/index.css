@@ -45,9 +45,13 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, .font-serif {
+  h1, h2, h3, h4, h5, h6, .font-serif {
     font-family: var(--font-serif);
     letter-spacing: -0.015em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
   }
 }
 

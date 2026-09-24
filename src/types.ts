@@ -27,6 +27,7 @@ export interface ApproachMethod {
   tag?: string;
   certificate?: CertificateInfo;
   certificates?: CertificateInfo[];
+  videoUrl?: string;
 }
 
 export interface FaqItem {
@@ -46,7 +47,7 @@ export interface WorkTopic {
 export interface EducationItem {
   id: string;
   title: string;
-  institution: string;
+  institution?: string;
   period: string;
   degree?: string;
   year?: string;

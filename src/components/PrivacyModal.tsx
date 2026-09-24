@@ -38,7 +38,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-serif text-xl font-normal text-[#1C2733]">
+                <h3 className="font-serif text-xl font-bold text-[#1C2733]">
                   Privātuma politika un VDAR / GDPR paziņojums
                 </h3>
                 <p className="text-xs font-mono text-[#6E7D8C] mt-0.5">
@@ -60,7 +60,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
           <div className="p-6 sm:p-8 max-h-[70vh] overflow-y-auto text-sm text-[#455260] space-y-5 leading-relaxed">
             
             <section className="space-y-2">
-              <h4 className="font-serif text-base font-normal text-[#1C2733] flex items-center space-x-2">
+              <h4 className="font-serif text-base font-bold text-[#1C2733] flex items-center space-x-2">
                 <Lock className="w-4 h-4 text-[#668261]" />
                 <span>1. Vispārīgie noteikumi un Pārzinis</span>
               </h4>
@@ -70,7 +70,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
             </section>
 
             <section className="space-y-2">
-              <h4 className="font-serif text-base font-normal text-[#1C2733] flex items-center space-x-2">
+              <h4 className="font-serif text-base font-bold text-[#1C2733] flex items-center space-x-2">
                 <FileText className="w-4 h-4 text-[#668261]" />
                 <span>2. Kādi datie tiek apstrādāti?</span>
               </h4>
@@ -82,7 +82,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
             </section>
 
             <section className="space-y-2">
-              <h4 className="font-serif text-base font-normal text-[#1C2733]">
+              <h4 className="font-serif text-base font-bold text-[#1C2733]">
                 3. Datu apstrādes mērķi un tiesiskais pamats
               </h4>
               <p>
@@ -91,7 +91,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
             </section>
 
             <section className="space-y-2">
-              <h4 className="font-serif text-base font-normal text-[#1C2733]">
+              <h4 className="font-serif text-base font-bold text-[#1C2733]">
                 4. Konfidencialitāte un konfidencialitātes izņēmumi
               </h4>
               <p>
@@ -100,7 +100,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
             </section>
 
             <section className="space-y-2">
-              <h4 className="font-serif text-base font-normal text-[#1C2733]">
+              <h4 className="font-serif text-base font-bold text-[#1C2733]">
                 5. Jūsu tiesības (VDAR / GDPR)
               </h4>
               <p>

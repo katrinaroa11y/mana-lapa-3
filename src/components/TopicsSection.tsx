@@ -5,8 +5,8 @@ import mindfulPathNatureImg from '../assets/images/mindful_path_nature_179008676
 
 export const TopicsSection: React.FC = () => {
   return (
-    <section id="temas" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] relative border-b border-[#E3DDD3]">
-      <div className="max-w-7xl mx-auto">
+    <section id="temas" className="py-24 sm:py-32 bg-[#FAF8F5] relative border-b border-[#E3DDD3]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16 sm:mb-20">
@@ -16,10 +16,10 @@ export const TopicsSection: React.FC = () => {
               Ar ko varu palīdzēt?
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18] mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18] mb-6">
             Tēmas
           </h2>
-          <p className="text-base sm:text-lg text-[#455260] leading-relaxed">
+          <p className="text-base sm:text-lg text-[#455260] leading-relaxed text-justify">
             Katram cilvēkam ir sava personība, dzīves pieredze un vērtības. Šeit apkopotas visbiežākās tēmas un grūtības, kurās sniedzu atbalstu. Taču arī ja šeit neatrodi savu tēmu, vai precīzi nevari pateikt, kas tieši Tevi apgrūtina, droši sazinies ar mani. Kopīgi atradīsim Tev piemērotu atbalsta formu.
           </p>
         </div>
@@ -37,40 +37,40 @@ export const TopicsSection: React.FC = () => {
             <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-[#6E7D8C] tracking-widest uppercase">
+                  <span className="text-sm font-mono text-[#6E7D8C] tracking-widest uppercase">
                     Tēmu loks
                   </span>
-                  <span className="text-sm font-mono text-[#668261] font-medium tracking-wider">
+                  <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     1
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-normal mb-4 leading-snug">
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-semibold mb-4 leading-snug">
                   Trauksme, stress un grūtības ar emociju regulāciju
                 </h3>
 
-                <p className="text-sm sm:text-base text-[#5A6775] leading-relaxed mb-8">
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
                   Profesionāls atbalsts situācijās, kad iekšējā spriedze, satraukums vai nomāktība sāk ietekmēt miegu, labsajūtu un spēju pieņemt lēmumus.
                 </p>
 
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                <div className="space-y-3.5 pt-2">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Trauksme un panikas lēkmes</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Stress un izdegšana</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Nomāktība un depresija</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Grūtības ar dusmām un impulsivitāti</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Atkarības</span>
                   </div>
@@ -78,7 +78,7 @@ export const TopicsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative min-h-[260px] sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
+            <div className="lg:col-span-5 relative h-[180px] sm:h-auto sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
               <img
                 src={calmSunlightWallImg}
                 alt="Mierīga, klusa telpa ar saules gaismu un maigām ēnām"
@@ -102,32 +102,32 @@ export const TopicsSection: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-[#6E7D8C] tracking-widest uppercase">
+                  <span className="text-sm font-mono text-[#6E7D8C] tracking-widest uppercase">
                     Tēmu loks
                   </span>
-                  <span className="text-sm font-mono text-[#668261] font-medium tracking-wider">
+                  <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     2
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-normal mb-4 leading-snug">
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-semibold mb-4 leading-snug">
                   Attiecības ar sevi un citiem
                 </h3>
 
-                <p className="text-sm sm:text-base text-[#5A6775] leading-relaxed mb-8">
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
                   Kā veidot patiesas saiknes ar līdzcilvēkiem, saglabājot iekšēju skaidrību, cieņu pret savām robežām un mierpilnu pašapziņu.
                 </p>
 
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                <div className="space-y-3.5 pt-2">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Grūtības veidot attiecības</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Izaicinājumi laulībā vai attiecību šķiršana</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Attiecības ar sevi un zems pašvērtējums</span>
                   </div>
@@ -145,32 +145,32 @@ export const TopicsSection: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-[#7D7365] tracking-widest uppercase">
+                  <span className="text-sm font-mono text-[#7D7365] tracking-widest uppercase">
                     Tēmu loks
                   </span>
-                  <span className="text-sm font-mono text-[#668261] font-medium tracking-wider">
+                  <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     3
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-normal mb-4 leading-snug">
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-semibold mb-4 leading-snug">
                   Traumatiska pieredze, sēras un bērnības ievainojumu dziedēšana
                 </h3>
 
-                <p className="text-sm sm:text-base text-[#5A6775] leading-relaxed mb-8">
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
                   Piesardzīga un droša telpa dziļāku ievainojumu apstrādei, zaudējumu izsērošanai un emocionālās pašregulācijas mehānismu pakāpeniskai atjaunošanai.
                 </p>
 
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                <div className="space-y-3.5 pt-2">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Traumatiska pieredze</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Sēras un zaudējumi</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Sarežģītas bērnības pieredzes</span>
                   </div>
@@ -191,36 +191,36 @@ export const TopicsSection: React.FC = () => {
             <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-[#6E7D8C] tracking-widest uppercase">
+                  <span className="text-sm font-mono text-[#6E7D8C] tracking-widest uppercase">
                     Tēmu loks
                   </span>
-                  <span className="text-sm font-mono text-[#668261] font-medium tracking-wider">
+                  <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     4
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-normal mb-4 leading-snug">
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C2733] font-semibold mb-4 leading-snug">
                   Personīgā izaugsme un pārmaiņas
                 </h3>
 
-                <p className="text-sm sm:text-base text-[#5A6775] leading-relaxed mb-8">
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
                   Iespēja iegūt resursus - teorētiskās zināšanas, uzdevumus sevis dziļākai iepazīšanai un daudzveidīgas tehnikas miera vairošanai ķermenī un prātā.
                 </p>
 
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                <div className="space-y-3.5 pt-2">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Uzdevumi pašizziņai</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Praktiskas psiholoģiskās tehnikas</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Skaidrība par saviem mērķiem</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm sm:text-base text-[#1C2733] font-medium">
+                  <div className="flex items-center space-x-3 text-base sm:text-lg text-[#1C2733] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#668261] shrink-0" />
                     <span>Atbalsts personīgajā izaugsmē</span>
                   </div>
@@ -228,7 +228,7 @@ export const TopicsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative min-h-[260px] sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
+            <div className="lg:col-span-5 relative h-[180px] sm:h-auto sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
               <img
                 src={mindfulPathNatureImg}
                 alt="Cilvēks dabā mierīgā ceļā uz dabisku apvārsni"

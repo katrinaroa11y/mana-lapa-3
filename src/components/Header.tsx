@@ -35,10 +35,11 @@ export const Header: React.FC<HeaderProps> = ({
     { name: 'Par mani', href: '#par-mani' },
     { name: 'Pakalpojumi', href: '#pakalpojumi' },
     { name: 'Tēmas', href: '#temas' },
-    { name: 'Izglītība', href: '#pieeja' },
+    { name: 'Metodes', href: '#pieeja' },
+    { name: 'Izglītība', href: '#izglitiba' },
+    { name: 'Blogs', href: '/blogs' },
     { name: 'BUJ', href: '#buj' },
     { name: 'Kontakti', href: '#kontakti' },
-    { name: 'Blogs', href: '/blogs' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

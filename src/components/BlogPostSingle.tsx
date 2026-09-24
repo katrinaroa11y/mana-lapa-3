@@ -73,7 +73,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
             {post.category}
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18]">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18]">
             {post.title}
           </h1>
 
@@ -124,7 +124,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
           <div className="space-y-8 text-base text-[#455260] leading-[1.8] font-normal">
             {post.content.sections.map((sec, idx) => (
               <div key={idx} className="space-y-3">
-                <h2 className="font-serif text-2xl text-[#1C2733] font-normal pt-2">
+                <h2 className="font-serif text-2xl text-[#1C2733] font-semibold pt-2">
                   {sec.heading}
                 </h2>
                 <div 
@@ -147,11 +147,11 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#668261]">
                 Raksta autore
               </span>
-              <h4 className="font-serif text-lg text-[#1C2733] font-medium">
+              <h4 className="font-serif text-lg text-[#1C2733] font-semibold">
                 {post.author}
               </h4>
               <p className="text-xs text-[#455260] font-normal leading-relaxed">
-                Reģistrēta psiholoģe (Reģ. Nr. 7001642). Specializējas klīniskajā psiholoģijā, izmanto EMDR un shēmu terapijas metodes.
+                Reģistrēta psiholoģe (Reģ. Nr. 7001430). Specializējas klīniskajā psiholoģijā, izmanto EMDR un shēmu terapijas metodes.
               </p>
             </div>
           </div>
@@ -175,7 +175,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
         {otherPosts.length > 0 && (
           <div className="mt-16 space-y-6">
             <div className="flex items-center justify-between border-b border-[#E3DDD3] pb-3">
-              <h3 className="font-serif text-2xl text-[#1C2733] font-normal flex items-center space-x-2">
+              <h3 className="font-serif text-2xl text-[#1C2733] font-semibold flex items-center space-x-2">
                 <BookOpen className="w-5 h-5 text-[#668261]" />
                 <span>Citi saistītie raksti</span>
               </h3>
@@ -198,7 +198,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#668261]">
                       {otherPost.category}
                     </span>
-                    <h4 className="font-serif text-lg text-[#1C2733] font-normal group-hover:text-[#668261] transition-colors line-clamp-2">
+                    <h4 className="font-serif text-lg text-[#1C2733] font-semibold group-hover:text-[#668261] transition-colors line-clamp-2">
                       {otherPost.title}
                     </h4>
                   </div>

@@ -36,6 +36,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [step, setStep] = useState<number>(1);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const initialServiceId = (preselectedServiceId && preselectedServiceId !== 'nodarbibas-un-lekcijas')
     ? preselectedServiceId
@@ -84,6 +85,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
     // Nosūta pieteikumu uz Vercel API
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
       const response = await fetch('/api/booking', {
@@ -106,12 +108,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
     } catch (error) {
       console.error('Booking error:', error);
-
       setIsSubmitting(false);
-
-      alert(
-        'Neizdevās nosūtīt pieteikumu. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mani telefoniski (tel. nr. +371 27572910).'
-      );
+      setSubmitError('Neizdevās nosūtīt pieteikumu. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mani telefoniski (+371 27572910).');
     }
   };
 
@@ -119,6 +117,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     setStep(1);
     setIsSubmitted(false);
     setIsSubmitting(false);
+    setSubmitError(null);
     onClose();
   };
 
@@ -148,7 +147,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#668261] block mb-1">
                 Pieteikšanās konsultācijai
               </span>
-              <h3 className="font-serif text-2xl font-normal text-[#1C2733]">
+              <h3 className="font-serif text-2xl font-bold text-[#1C2733]">
                 {isSubmitted ? 'Pieteikums saņemts!' : `Solis ${step} no 4`}
               </h3>
             </div>
@@ -180,7 +179,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   <CheckCircle className="w-8 h-8" />
                 </div>
 
-                <h3 className="font-serif text-2xl text-[#1C2733] font-normal">
+                <h3 className="font-serif text-2xl text-[#1C2733] font-bold">
                   Paldies, {formData.fullName}!
                 </h3>
 
@@ -243,7 +242,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                           }`}
                         >
                           <div>
-                            <span className="block font-serif text-base font-normal text-[#1C2733]">
+                            <span className="block font-serif text-base font-bold text-[#1C2733]">
                               {s.title}
                             </span>
                             <span className="block text-xs font-mono text-[#6E7D8C] mt-1">
@@ -276,7 +275,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         className="p-6 rounded-sm border cursor-pointer transition-all text-center space-y-2 border-[#1C2733] bg-[#FAF8F5] ring-1 ring-[#1C2733]"
                       >
                         <Calendar className="w-7 h-7 text-[#668261] mx-auto" />
-                        <span className="block font-serif text-lg font-normal text-[#1C2733]">
+                        <span className="block font-serif text-lg font-bold text-[#1C2733]">
                           Tiešsaistē (Online)
                         </span>
                         <span className="block text-xs text-[#6E7D8C]">
@@ -440,6 +439,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         Piekrītu manu datu apstrādei pieteikuma apstrādes un saziņas nodrošināšanai (saskaņā ar VDAR).
                       </label>
                     </div>
+
+                    {submitError && (
+                      <div className="p-3.5 rounded-sm bg-red-50 border border-red-200 text-red-800 text-xs flex items-start space-x-2.5 mt-3">
+                        <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                        <span>{submitError}</span>
+                      </div>
+                    )}
                   </div>
                 )}
 

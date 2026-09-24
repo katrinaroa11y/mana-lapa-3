@@ -30,7 +30,7 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
             <span className="w-6 h-px bg-[#668261]" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18] mb-5">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18] mb-5">
           Jautājumi un atbildes
           </h2>
 
@@ -56,7 +56,7 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
                   onClick={() => toggleFaq(faq.id)}
                   className="w-full text-left p-6 flex items-center justify-between space-x-4 focus:outline-none group cursor-pointer"
                 >
-                  <span className="font-serif text-lg sm:text-xl font-normal text-[#1C2733] group-hover:text-[#668261] transition-colors leading-snug">
+                  <span className="font-serif text-lg sm:text-xl font-bold text-[#1C2733] group-hover:text-[#668261] transition-colors leading-snug">
                     {faq.question}
                   </span>
 
@@ -93,7 +93,7 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
         <div className="mt-14 p-7 sm:p-8 rounded-sm bg-[#FAF8F5] border border-[#E3DDD3] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)]">
 
           <div className="text-center sm:text-left">
-            <h4 className="font-serif text-lg font-medium text-[#1C2733] mb-1">
+            <h4 className="font-serif text-lg font-bold text-[#1C2733] mb-1">
               Palika neatbildēts jautājums?
             </h4>
 

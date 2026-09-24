@@ -71,6 +71,7 @@ export const APPROACH_METHODS: ApproachMethod[] = [
     title: 'EMDR Terapija',
     description: 'Zinātniski pierādīta metode, kas ar abpusēju stimulāciju palīdz smadzenēm dabiskā veidā pārstrādāt iestrēgušas atmiņas un samazināt to ietekmi.',
     iconName: 'Brain',
+    videoUrl: 'https://www.youtube.com/watch?v=Jc5mHo-OjYM',
     certificates: [
       {
         title: 'EMDR 2. līmeņa apmācības',
@@ -89,6 +90,7 @@ export const APPROACH_METHODS: ApproachMethod[] = [
     title: 'Shēmu Terapija',
     description: 'Shēmu terapija palīdz izprast dziļākus domāšanas, emociju un uzvedības modeļus, kas bieži veidojušies agrīnā bērnībā un var atkārtoties attiecībās, dzīves izvēlēs vai emocionālajās reakcijās.',
     iconName: 'Layers',
+    videoUrl: 'https://www.youtube.com/watch?v=-YHsvrj8YF4',
     certificates: [
       {
         title: 'Apmācības: Attiecību izaicinājumu pārvarēšana un Veselā pieaugušā stiprināšana shēmu terapijā',
@@ -112,6 +114,7 @@ export const APPROACH_METHODS: ApproachMethod[] = [
     title: 'Motivējošā Intervēšana',
     description: 'Motivējošā intervēšana palīdz pārvarēt iekšējās šaubas, vilcināšanos un pretrunas, lai tiektos uz veselīgākiem paradumiem un/ vai atkarības (azartspēļu, alkohola, cigarešu, narkotisko vielu, t.sk. marihuānas) pārvarēšanu.',
     iconName: 'Compass',
+    videoUrl: 'https://www.youtube.com/watch?v=reTb-x6UOmY',
     certificate: {
       title: 'Intervijas konsultēšanas praksē: Motivējošā intervēšana',
       number: '',
@@ -136,6 +139,51 @@ export const EDUCATION = [
     title: 'Bakalaura grāds psiholoģijā',
     institution: 'Latvijas Universitāte',
     period: '2017–2020'
+  },
+  {
+    id: 'emdr-lvl2-2026',
+    title: 'EMDR bāzes 2. līmeņa apmācība',
+    period: '2026'
+  },
+  {
+    id: 'schema-relationships-2026',
+    title: 'Attiecību izaicinājumu pārvarēšana un veselā pieaugušā stiprināšana shēmu terapijā',
+    period: '2026'
+  },
+  {
+    id: 'schema-chairs-2025',
+    title: 'Darbs ar krēsliem shēmu terapijā',
+    period: '2025'
+  },
+  {
+    id: 'motivational-interviewing-2025',
+    title: 'Intervijas konsultēšanas praksē: Motivējošā intervēšana',
+    period: '2025'
+  },
+  {
+    id: 'emdr-lvl1-2024',
+    title: 'EMDR bāzes 1. līmeņa apmācības',
+    period: '2024'
+  },
+  {
+    id: 'schema-lvl1-2024',
+    title: 'Shēmu terapijas bāzes līmeņa apmācības',
+    period: '2024'
+  },
+  {
+    id: 'group-team-consulting-2024',
+    title: 'Grupu un komandu konsultēšana',
+    period: '2024'
+  },
+  {
+    id: 'narrative-exposure-2022',
+    title: 'Apmācības naratīvajā ekspozīcijas terapijā',
+    period: '2022'
+  },
+  {
+    id: 'crisis-intervention-2018',
+    title: 'Krīzes intervence pamatlīmenis un pilnveides līmenis',
+    period: '2018'
   }
 ];
 

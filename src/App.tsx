@@ -98,10 +98,9 @@ export default function App() {
             <ServicesSection onOpenBooking={handleOpenBooking} />
             <TopicsSection />
             <ApproachSection />
-            <FaqSection onOpenBooking={() => handleOpenBooking()} />
 
             {/* Integrated Blog Section on Homepage */}
-            <section id="blogs" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] border-t border-[#E3DDD3]">
+            <section id="blogs" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-t border-[#E3DDD3]">
               <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
                   <div>
@@ -111,7 +110,7 @@ export default function App() {
                         Jaunākie Raksti
                       </span>
                     </div>
-                    <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18]">
+                    <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18]">
                       Psiholoģijas blogs
                     </h2>
                   </div>
@@ -131,6 +130,9 @@ export default function App() {
               </div>
             </section>
 
+            {/* BUJ (FaqSection) placed under Blog section */}
+            <FaqSection onOpenBooking={() => handleOpenBooking()} />
+
             <ContactSection />
           </>
         )}
@@ -140,6 +142,8 @@ export default function App() {
       <Footer
         onOpenPrivacy={() => setIsPrivacyOpen(true)}
         onOpenBooking={() => handleOpenBooking()}
+        onNavigateBlogs={() => navigate('/blogs')}
+        onNavigateHome={handleNavigateHome}
       />
 
       {/* Booking Modal */}

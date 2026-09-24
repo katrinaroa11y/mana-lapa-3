@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { PRACTICE_INFO } from '../data/practiceData';
-import { Mail, Phone, Send, CheckCircle2, Instagram, Shield, Loader2 } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle2, Instagram, Shield, Loader2, AlertCircle } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -15,6 +16,7 @@ export const ContactSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMsg(null);
 
     try {
       const response = await fetch('/api/booking', {
@@ -49,7 +51,7 @@ export const ContactSection: React.FC = () => {
       });
     } catch (error) {
       console.error('Email error:', error);
-      alert('Neizdevās nosūtīt ziņu. Lūdzu, mēģiniet vēlreiz vai sazinieties telefoniski.');
+      setErrorMsg('Neizdevās nosūtīt ziņu. Lūdzu, mēģiniet vēlreiz vai sazinieties telefoniski.');
     } finally {
       setLoading(false);
     }
@@ -60,17 +62,18 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
+        <div className="max-w-5xl mb-16 sm:mb-20">
           <div className="flex items-center space-x-3 mb-4">
             <span className="w-8 h-px bg-[#668261]" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#668261]">
               Saziņa & Lokācija
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18] mb-5">
-            Esmu šeit, lai atbildētu uz Taviem jautājumiem
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] text-[#1C2733] font-semibold leading-[1.25] mb-5">
+            <span>Sazinies ar mani e-pastā vai telefoniski,</span>
+            <span className="block mt-1 sm:mt-2">lai uzzinātu vairāk</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#455260] leading-relaxed">
+          <p className="text-base sm:text-lg text-[#455260] leading-relaxed max-w-3xl">
             Droši sazinieties, lai noskaidrotu sev interesējošās nianses vai vienotos par tikšanās laiku.
           </p>
         </div>
@@ -80,7 +83,7 @@ export const ContactSection: React.FC = () => {
           {/* Left Column: Direct Contact Info */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-8 sm:p-9 rounded-sm bg-[#FFFFFF] border border-[#E3DDD3] space-y-7 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)]">
-              <h3 className="font-serif text-2xl font-normal text-[#1C2733] pb-4 border-b border-[#E3DDD3]">
+              <h3 className="font-serif text-2xl font-bold text-[#1C2733] pb-4 border-b border-[#E3DDD3]">
                 Prakses informācija
               </h3>
 
@@ -149,7 +152,7 @@ export const ContactSection: React.FC = () => {
           {/* Right Column: Contact Message Form */}
           <div className="lg:col-span-7" id="nosutit-zinu">
             <div className="p-8 sm:p-10 rounded-sm bg-[#FFFFFF] border border-[#E3DDD3] shadow-[0_4px_20px_-4px_rgba(28,39,51,0.04)]">
-              <h3 className="font-serif text-2xl font-normal text-[#1C2733] mb-2">
+              <h3 className="font-serif text-2xl font-bold text-[#1C2733] mb-2">
                 Nosūtīt ziņu Katrīnai
               </h3>
               <p className="text-sm text-[#6E7D8C] mb-6">
@@ -159,7 +162,7 @@ export const ContactSection: React.FC = () => {
               {submitted ? (
                 <div className="p-8 rounded-sm bg-[#FAF8F5] border border-[#668261] text-center space-y-4">
                   <CheckCircle2 className="w-10 h-10 text-[#668261] mx-auto" />
-                  <h4 className="font-serif text-xl font-normal text-[#1C2733]">
+                  <h4 className="font-serif text-xl font-bold text-[#1C2733]">
                     Paldies, ziņa ir nosūtīta!
                   </h4>
                   <p className="text-sm text-[#455260]">
@@ -230,6 +233,13 @@ export const ContactSection: React.FC = () => {
                       className="w-full p-3.5 rounded-sm border border-[#D1C9BC] bg-[#FAF8F5] text-sm text-[#1C2733] focus:outline-none focus:border-[#1C2733] focus:bg-[#FFFFFF] transition-all placeholder:text-[#9EA8B3]"
                     />
                   </div>
+
+                  {errorMsg && (
+                    <div className="p-3.5 rounded-sm bg-red-50 border border-red-200 text-red-800 text-xs flex items-start space-x-2.5">
+                      <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                      <span>{errorMsg}</span>
+                    </div>
+                  )}
 
                   <button
                     type="submit"

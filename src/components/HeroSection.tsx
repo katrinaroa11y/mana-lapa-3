@@ -71,10 +71,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.7, delay: 0.08 }}
               className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C2733] tracking-tight leading-[1.12] mb-6"
             >
-              Palīdzu radīt <br />
               <span className="italic text-[#668261] font-normal">
-                paliekošas pārmaiņas.
-              </span>
+                Palīdzu radīt
+              </span> <br />
+              paliekošas pārmaiņas.
             </motion.h1>
 
             {/* Subtitle / Intro Statement */}
@@ -82,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.16 }}
-              className="text-base sm:text-lg text-[#455260] font-normal max-w-xl leading-relaxed mb-9"
+              className="text-base sm:text-lg text-[#455260] font-normal max-w-xl leading-relaxed mb-9 text-justify"
             >
               Klīniskās psiholoģes konsultācijas trauksmes, stresa, depresijas, izdegšanas, attiecību problēmu un citu emocionālu grūtību risināšanai. Konsultācijas attālināti visā Latvijā.
             </motion.p>
@@ -120,29 +120,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </a>
             </motion.div>
 
-            {/* Mobile-only Portrait (Parādās virs uzticamības joslas telefona skatā) */}
+            {/* Mobile-only Portrait */}
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.28 }}
-              className="block lg:hidden mb-10 max-w-sm sm:max-w-md mx-auto w-full"
+              className="block lg:hidden mb-6 sm:mb-10 max-w-sm sm:max-w-md mx-auto w-full"
             >
               <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-md shadow-[0_6px_24px_-6px_rgba(0,0,0,0.12)]">
                 <img
                   src={portraitSrc}
                   alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full -mt-[38px] h-[calc(100%+38px)] object-cover object-top"
                 />
               </div>
             </motion.div>
 
-            {/* Key Trust Highlights - Open Editorial Strip (bez atdalošās līnijas) */}
+            {/* Key Trust Highlights - Hidden on mobile phone view, visible on sm and above */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.32 }}
-              className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-start gap-6 sm:gap-10 lg:gap-14"
+              className="hidden sm:flex sm:pt-4 flex-col sm:flex-row items-start gap-6 sm:gap-10 lg:gap-14"
             >
               <div className="flex items-start space-x-3">
                 <LockKeyhole

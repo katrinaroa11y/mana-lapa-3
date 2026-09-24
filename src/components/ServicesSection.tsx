@@ -24,7 +24,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             </span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18]">
             Atbalsta iespējas
           </h2>
         </div>
@@ -51,7 +51,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   </span>
 
                   {service.price && (
-                    <span className="text-xl font-serif text-[#1C2733] font-normal">
+                    <span className="text-xl font-serif text-[#1C2733] font-bold">
                       {service.price}
                     </span>
                   )}
@@ -59,10 +59,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
                 {/* Service Title & Subtitle - fixed unified height so duration & format block top edge aligns across all columns */}
                 <div className="min-h-[105px] md:h-[160px] lg:h-[145px] xl:h-[135px] flex flex-col justify-start mb-5">
-                  <h3 className="font-serif text-2xl font-normal text-[#1C2733] mb-2 leading-snug">
+                  <h3 className="font-serif text-2xl font-semibold text-[#1C2733] mb-2 leading-snug text-center">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#6E7D8C] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#6E7D8C] leading-relaxed text-justify">
                     {service.subtitle}
                   </p>
                 </div>

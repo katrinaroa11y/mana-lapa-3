@@ -29,12 +29,12 @@ export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true 
               <span>Psiholoģijas Blogs & Raksti</span>
             </div>
             
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-normal leading-[1.18]">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18]">
               Katrīna raksta
             </h1>
             
             <p className="text-base sm:text-lg text-[#455260] font-normal leading-relaxed">
-              Psiholoģija saprotamā valodā. Šeit atradīsi zinātnē balstītu informāciju un praktiskus ieteikumus par stresa vadību, attiecībām, pašizziņu, dažādām metodēm un citām aktuālām psiholoģijas tēmām. Dalos ar to, kas palīdz labāk izprast sevi, citus cilvēkus un atrast praktiski pielietojamus soļus ikdienai.
+              Ja vēlies lasīt par daudzveidīgam psiholoģijas un psihoterapijas tēmām, tad šeit esi īstajā vietā. Blogā iegūsi zinātnē balstītu informāciju un praktiskus ieteikumus par stresa vadību, attiecībām, pašizziņu, dažādām metodēm un citām aktuālām psiholoģijas tēmām. Dalos ar to, kas palīdz labāk izprast sevi, citus cilvēkus un atrast praktiski pielietojamus soļus ikdienai.
             </p>
           </div>
         )}
@@ -83,7 +83,7 @@ export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true 
 
                 {/* 3. Raksta nosaukums */}
                 <div className="space-y-2 flex-grow">
-                  <h2 className="font-serif text-xl sm:text-2xl text-[#1C2733] font-normal group-hover:text-[#668261] transition-colors leading-snug">
+                  <h2 className="font-serif text-xl sm:text-2xl text-[#1C2733] font-semibold group-hover:text-[#668261] transition-colors leading-snug">
                     {post.title}
                   </h2>
                   <p className="text-sm text-[#455260] line-clamp-3 font-normal leading-relaxed pt-1">
