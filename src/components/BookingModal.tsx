@@ -12,20 +12,47 @@ interface BookingModalProps {
 
 const BOOKABLE_SERVICES = SERVICES.filter((s) => s.id !== 'nodarbibas-un-lekcijas');
 
-const getInitialWorkday = () => {
-  const d = new Date();
-  d.setDate(d.getDate() + 1);
-  while (d.getDay() === 0 || d.getDay() === 6) {
-    d.setDate(d.getDate() + 1);
-  }
-  return d.toISOString().split('T')[0];
-};
-
 const isWeekendSelected = (dateStr: string) => {
   if (!dateStr) return false;
   const d = new Date(dateStr + 'T00:00:00');
   const day = d.getDay();
   return day === 0 || day === 6; // 0 = Sunday, 6 = Saturday
+};
+
+const getFullyBookedMessage = (dateStr: string): string | null => {
+  if (!dateStr) return null;
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return null;
+  const month = parseInt(parts[1], 10);
+  const day = parseInt(parts[2], 10);
+  if (month === 10 && day >= 12 && day <= 27) {
+    return '12.–27. oktobrī pieraksts ir pilns.';
+  }
+  if (month === 11 && day >= 9 && day <= 13) {
+    return '9.–13. novembrī pieraksts ir pilns.';
+  }
+  return null;
+};
+
+const isFullyBookedDate = (dateStr: string) => {
+  return getFullyBookedMessage(dateStr) !== null;
+};
+
+const isDateUnavailable = (dateStr: string) => {
+  return isWeekendSelected(dateStr) || isFullyBookedDate(dateStr);
+};
+
+const getInitialWorkday = () => {
+  const d = new Date();
+  d.setDate(d.getDate() + 1);
+  while (
+    d.getDay() === 0 ||
+    d.getDay() === 6 ||
+    isFullyBookedDate(d.toISOString().split('T')[0])
+  ) {
+    d.setDate(d.getDate() + 1);
+  }
+  return d.toISOString().split('T')[0];
 };
 
 export const BookingModal: React.FC<BookingModalProps> = ({
@@ -74,7 +101,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const handleNextStep = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (step === 3 && isWeekendSelected(formData.date)) {
+    if (step === 3 && isDateUnavailable(formData.date)) {
       return;
     }
 
@@ -304,12 +331,22 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                         className={`w-full p-3.5 rounded-sm border text-sm focus:outline-none transition-all ${
-                          isWeekendSelected(formData.date)
+                          isDateUnavailable(formData.date)
                             ? 'border-amber-400 bg-amber-50/50 text-amber-900 focus:border-amber-400'
                             : 'border-[#D1C9BC] bg-[#FAF8F5] text-[#1C2733] focus:border-[#1C2733] focus:bg-[#FFFFFF]'
                         }`}
                       />
-                      {isWeekendSelected(formData.date) && (
+                      {isFullyBookedDate(formData.date) ? (
+                        <div className="p-3.5 rounded-sm bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start space-x-2.5 mt-2">
+                          <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                          <div>
+                            <strong className="font-semibold block text-amber-900 mb-0.5">
+                              {getFullyBookedMessage(formData.date)}
+                            </strong>
+                            <span>Lūdzu, izvēlieties citu datumu.</span>
+                          </div>
+                        </div>
+                      ) : isWeekendSelected(formData.date) ? (
                         <div className="p-3.5 rounded-sm bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start space-x-2.5 mt-2">
                           <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                           <div>
@@ -319,7 +356,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                             <span>Lūdzu, izvēlieties darba dienu (pirmdiena – piektdiena).</span>
                           </div>
                         </div>
-                      )}
+                      ) : null}
                     </div>
 
                     <div>
@@ -371,12 +408,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider text-[#455260] mb-1">
-                        Vārds, Uzvārds *
+                        Vārds *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Piem. Anna Bērziņa"
+                        placeholder="Piem. Anna"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         className="w-full p-3 rounded-sm border border-[#D1C9BC] bg-[#FAF8F5] text-sm text-[#1C2733] focus:outline-none focus:border-[#1C2733] focus:bg-[#FFFFFF] transition-all"
@@ -466,9 +503,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
                   <button
                     type="submit"
-                    disabled={isSubmitting || (step === 3 && isWeekendSelected(formData.date))}
+                    disabled={isSubmitting || (step === 3 && isDateUnavailable(formData.date))}
                     className={`inline-flex items-center space-x-2 px-6 py-3 rounded-md font-medium text-sm tracking-wide transition-all border ${
-                      step === 3 && isWeekendSelected(formData.date)
+                      step === 3 && isDateUnavailable(formData.date)
                         ? 'bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed'
                         : 'bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] border-[#e08e69] hover:border-[#cb7c57] cursor-pointer'
                     }`}

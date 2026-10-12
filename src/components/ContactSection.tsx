@@ -179,12 +179,12 @@ export const ContactSection: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider text-[#455260] mb-1.5">
-                      Jūsu vārds, uzvārds *
+                      Jūsu vārds *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Anna Bērziņa"
+                      placeholder="Anna"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="w-full p-3.5 rounded-sm border border-[#D1C9BC] bg-[#FAF8F5] text-sm text-[#1C2733] focus:outline-none focus:border-[#1C2733] focus:bg-[#FFFFFF] transition-all placeholder:text-[#9EA8B3]"
