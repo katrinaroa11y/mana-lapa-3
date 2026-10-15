@@ -208,8 +208,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 </h3>
 
                 <p className="text-sm text-[#455260] max-w-md mx-auto leading-relaxed">
-                  Pieteikums konsultācijai <strong className="text-[#1C2733]">{selectedService.title}</strong> ir veiksmīgi nosūtīts. Tuvāko 24h laikā nosūtīšu apstiprinājumu uz Jūsu e-pastu ({formData.email}).
-                  Pieteikums <strong className="text-[#1C2733]">{selectedService.title}</strong> ir veiksmīgi nosūtīts. Tuvāko 24h laikā nosūtīšu apstiprinājumu uz Tavu e-pastu ({formData.email}).
+                  Pieteikums konsultācijai <strong className="text-[#1C2733]">{selectedService.title}</strong> ir veiksmīgi nosūtīts. Tuvāko 24h laikā nosūtīšu apstiprinājumu uz Tavu e-pastu.
                 </p>
 
                 {/* Booking Recap Card */}
