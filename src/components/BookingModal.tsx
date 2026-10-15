@@ -25,9 +25,6 @@ const getFullyBookedMessage = (dateStr: string): string | null => {
   if (parts.length !== 3) return null;
   const month = parseInt(parts[1], 10);
   const day = parseInt(parts[2], 10);
-  if (month === 10 && day >= 12 && day <= 27) {
-    return '12.–27. oktobrī pieraksts ir pilns.';
-  }
   if (month === 11 && day >= 9 && day <= 13) {
     return '9.–13. novembrī pieraksts ir pilns.';
   }
