@@ -100,12 +100,31 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-12 rounded-sm overflow-hidden border border-[#E3DDD3] shadow-[0_4px_20px_-4px_rgba(28,39,51,0.06)] bg-[#FFFFFF]"
         >
-          <img
-            src={post.featuredImage}
-            alt={post.title}
-            referrerPolicy="no-referrer"
-            className="w-full h-[280px] sm:h-[420px] object-cover object-center"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet={`
+                ${post.featuredImage.replace(/\.jpg$/, '-480.webp')} 480w,
+                ${post.featuredImage.replace(/\.jpg$/, '-800.webp')} 800w,
+                ${post.featuredImage.replace(/\.jpg$/, '-1200.webp')} 1200w
+              `}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px"
+            />
+            <img
+              src={post.featuredImage}
+              srcSet={`
+                ${post.featuredImage.replace(/\.jpg$/, '-480.jpg')} 480w,
+                ${post.featuredImage.replace(/\.jpg$/, '-800.jpg')} 800w,
+                ${post.featuredImage} 1200w
+              `}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px"
+              alt={post.title}
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              className="w-full h-[280px] sm:h-[420px] object-cover object-center"
+            />
+          </picture>
         </motion.div>
 
         {/* Article Content Body */}
@@ -137,12 +156,20 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
 
           {/* Author Box */}
           <div className="mt-12 pt-8 border-t border-[#E3DDD3] flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left bg-[#FAF8F5] p-6 sm:p-7 rounded-sm border border-[#E3DDD3]">
-            <img
-              src={katrinaPortrait}
-              alt={post.author}
-              referrerPolicy="no-referrer"
-              className="w-16 h-16 rounded-sm object-cover border border-[#D1C9BC] shadow-xs shrink-0"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.webp"
+              />
+              <img
+                src={katrinaPortrait}
+                alt={post.author}
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                className="w-16 h-16 rounded-sm object-cover border border-[#D1C9BC] shadow-xs shrink-0"
+              />
+            </picture>
             <div className="space-y-1.5">
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#668261]">
                 Raksta autore

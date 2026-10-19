@@ -69,7 +69,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   // Form State
   const [formData, setFormData] = useState<BookingFormData>({
     serviceId: initialServiceId,
-    format: 'tiessaiste',
+    format: '',
     date: getInitialWorkday(),
     timeSlot: TIME_SLOTS[0],
     fullName: '',
@@ -86,7 +86,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         : BOOKABLE_SERVICES[0].id;
       setFormData((prev) => ({
         ...prev,
-        serviceId: validId
+        serviceId: validId,
+        format: ''
       }));
     }
   }, [isOpen, preselectedServiceId]);
@@ -97,6 +98,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   const handleNextStep = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (step === 2 && !formData.format) {
+      return;
+    }
 
     if (step === 3 && isDateUnavailable(formData.date)) {
       return;
@@ -293,18 +298,40 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     </label>
 
                     <div className="grid grid-cols-1 gap-4">
-                      <div
-                        onClick={() => setFormData({ ...formData, format: 'tiessaiste' })}
-                        className="p-6 rounded-sm border cursor-pointer transition-all text-center space-y-2 border-[#1C2733] bg-[#FAF8F5] ring-1 ring-[#1C2733]"
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            format: prev.format === 'tiessaiste' ? '' : 'tiessaiste',
+                          }))
+                        }
+                        className={`w-full p-6 rounded-sm border cursor-pointer transition-all text-center space-y-2 ${
+                          formData.format === 'tiessaiste'
+                            ? 'bg-[#e08e69] text-[#FAF8F5] border-[#e08e69] shadow-xs'
+                            : 'bg-[#FAF8F5] text-[#1C2733] border-[#D1C9BC] hover:border-[#e08e69]'
+                        }`}
                       >
-                        <Calendar className="w-7 h-7 text-[#668261] mx-auto" />
-                        <span className="block font-serif text-lg font-bold text-[#1C2733]">
+                        <Calendar
+                          className={`w-7 h-7 mx-auto transition-colors ${
+                            formData.format === 'tiessaiste' ? 'text-[#FAF8F5]' : 'text-[#668261]'
+                          }`}
+                        />
+                        <span
+                          className={`block font-serif text-lg font-bold transition-colors ${
+                            formData.format === 'tiessaiste' ? 'text-[#FAF8F5]' : 'text-[#1C2733]'
+                          }`}
+                        >
                           Tiešsaistē (Online)
                         </span>
-                        <span className="block text-xs text-[#6E7D8C]">
+                        <span
+                          className={`block text-xs transition-colors ${
+                            formData.format === 'tiessaiste' ? 'text-[#FAF8F5]/90' : 'text-[#6E7D8C]'
+                          }`}
+                        >
                           Google Meet vai MS Teams video zvans
                         </span>
-                      </div>
+                      </button>
                     </div>
                   </div>
                 )}
@@ -499,9 +526,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
                   <button
                     type="submit"
-                    disabled={isSubmitting || (step === 3 && isDateUnavailable(formData.date))}
+                    disabled={
+                      isSubmitting ||
+                      (step === 2 && !formData.format) ||
+                      (step === 3 && isDateUnavailable(formData.date))
+                    }
                     className={`inline-flex items-center space-x-2 px-6 py-3 rounded-md font-medium text-sm tracking-wide transition-all border ${
-                      step === 3 && isDateUnavailable(formData.date)
+                      (step === 2 && !formData.format) || (step === 3 && isDateUnavailable(formData.date))
                         ? 'bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed'
                         : 'bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] border-[#e08e69] hover:border-[#cb7c57] cursor-pointer'
                     }`}

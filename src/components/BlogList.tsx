@@ -52,12 +52,31 @@ export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true 
             >
               {/* 1. Featured Image (Raksta galvenā bilde) */}
               <div className="relative aspect-[4/3] overflow-hidden bg-[#F4EFEA] shrink-0 border-b border-[#E3DDD3]">
-                <img
-                  src={post.featuredImage}
-                  alt={post.title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet={`
+                      ${post.featuredImage.replace(/\.jpg$/, '-480.webp')} 480w,
+                      ${post.featuredImage.replace(/\.jpg$/, '-800.webp')} 800w,
+                      ${post.featuredImage.replace(/\.jpg$/, '-1200.webp')} 1200w
+                    `}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 400px"
+                  />
+                  <img
+                    src={post.featuredImage}
+                    srcSet={`
+                      ${post.featuredImage.replace(/\.jpg$/, '-480.jpg')} 480w,
+                      ${post.featuredImage.replace(/\.jpg$/, '-800.jpg')} 800w,
+                      ${post.featuredImage} 1200w
+                    `}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 400px"
+                    alt={post.title}
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </picture>
                 <div className="absolute top-3.5 left-3.5">
                   <span className="text-[11px] font-mono uppercase tracking-wider text-[#1C2733] bg-[#FAF8F5]/95 px-2.5 py-1 rounded-sm border border-[#D1C9BC]">
                     {post.category}

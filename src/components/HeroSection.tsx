@@ -39,6 +39,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         <img
           src="/calming_hero_bg_1785157949576.jpg"
           alt="Mierīgs un atbalstošs fons"
+          loading="lazy"
+          decoding="async"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover opacity-12 mix-blend-multiply filter saturate-50"
         />
@@ -128,12 +130,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               className="block lg:hidden mb-6 sm:mb-10 max-w-sm sm:max-w-md mx-auto w-full"
             >
               <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-md shadow-[0_6px_24px_-6px_rgba(0,0,0,0.12)]">
-                <img
-                  src={portraitSrc}
-                  alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
-                  referrerPolicy="no-referrer"
-                  className="w-full -mt-[38px] h-[calc(100%+38px)] object-cover object-top"
-                />
+                {portraitSrc === DEFAULT_PORTRAIT ? (
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.webp 480w, /psihologe-riga-katrina-rozenbaha-prakse-800.webp 800w, /psihologe-riga-katrina-rozenbaha-prakse.webp 1024w"
+                      sizes="(max-width: 640px) 384px, (max-width: 1024px) 448px, 448px"
+                    />
+                    <img
+                      src={portraitSrc}
+                      srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.jpg 480w, /psihologe-riga-katrina-rozenbaha-prakse-800.jpg 800w, /psihologe-riga-katrina-rozenbaha-prakse.jpg 1024w"
+                      sizes="(max-width: 640px) 384px, (max-width: 1024px) 448px, 448px"
+                      alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                      fetchPriority="high"
+                      loading="eager"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="w-full -mt-[38px] h-[calc(100%+38px)] object-cover object-top"
+                    />
+                  </picture>
+                ) : (
+                  <img
+                    src={portraitSrc}
+                    alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="w-full -mt-[38px] h-[calc(100%+38px)] object-cover object-top"
+                  />
+                )}
               </div>
             </motion.div>
 
@@ -191,12 +217,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           >
             <div className="relative w-full max-w-sm sm:max-w-md">
               <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-md shadow-[0_6px_24px_-6px_rgba(0,0,0,0.12)]">
-                <img
-                  src={portraitSrc}
-                  alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
-                />
+                {portraitSrc === DEFAULT_PORTRAIT ? (
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.webp 480w, /psihologe-riga-katrina-rozenbaha-prakse-800.webp 800w, /psihologe-riga-katrina-rozenbaha-prakse.webp 1024w"
+                      sizes="(max-width: 1280px) 384px, 448px"
+                    />
+                    <img
+                      src={portraitSrc}
+                      srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.jpg 480w, /psihologe-riga-katrina-rozenbaha-prakse-800.jpg 800w, /psihologe-riga-katrina-rozenbaha-prakse.jpg 1024w"
+                      sizes="(max-width: 1280px) 384px, 448px"
+                      alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                      fetchPriority="high"
+                      loading="eager"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
+                    />
+                  </picture>
+                ) : (
+                  <img
+                    src={portraitSrc}
+                    alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
+                  />
+                )}
               </div>
             </div>
           </motion.div>

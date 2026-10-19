@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { renderFormattedText } from '../utils/formatText';
 import sessionNotesImg from '../assets/images/therapy_session_notes_1790166479933.jpg';
+import sessionNotesWebp480 from '../assets/images/therapy_session_notes-480.webp';
+import sessionNotesWebp800 from '../assets/images/therapy_session_notes-800.webp';
+import sessionNotesWebp1200 from '../assets/images/therapy_session_notes-1200.webp';
+import sessionNotesJpg480 from '../assets/images/therapy_session_notes-480.jpg';
 
 const TEXT_STORAGE_KEY = 'katrina_about_text_v100';
 
@@ -46,12 +50,23 @@ export const AboutSection: React.FC = () => {
             className="hidden lg:flex lg:col-span-5 justify-start"
           >
             <div className="relative w-full max-w-[420px] lg:max-w-[460px] rounded-sm overflow-hidden shadow-[0_4px_24px_-4px_rgba(28,39,51,0.08)] aspect-[3/4] bg-[#F4EFEA]">
-              <img
-                src={sessionNotesImg}
-                alt="Psiholoģe veic pierakstus individuālās konsultācijas laikā, fonā klients"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${sessionNotesWebp480} 480w, ${sessionNotesWebp800} 800w, ${sessionNotesWebp1200} 1200w`}
+                  sizes="(max-width: 1280px) 420px, 460px"
+                />
+                <img
+                  src={sessionNotesImg}
+                  srcSet={`${sessionNotesJpg480} 480w, ${sessionNotesImg} 1200w`}
+                  sizes="(max-width: 1280px) 420px, 460px"
+                  alt="Psiholoģe veic pierakstus individuālās konsultācijas laikā, fonā klients"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </picture>
             </div>
           </motion.div>
 

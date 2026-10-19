@@ -1,7 +1,16 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import calmSunlightWallImg from '../assets/images/calm_sunlight_wall_1790086756847.jpg';
+import calmSunlightWallWebp480 from '../assets/images/calm_sunlight_wall-480.webp';
+import calmSunlightWallWebp800 from '../assets/images/calm_sunlight_wall-800.webp';
+import calmSunlightWallWebp from '../assets/images/calm_sunlight_wall.webp';
+import calmSunlightWallJpg480 from '../assets/images/calm_sunlight_wall-480.jpg';
+
 import mindfulPathNatureImg from '../assets/images/mindful_path_nature_1790086769727.jpg';
+import mindfulPathNatureWebp480 from '../assets/images/mindful_path_nature-480.webp';
+import mindfulPathNatureWebp800 from '../assets/images/mindful_path_nature-800.webp';
+import mindfulPathNatureWebp1200 from '../assets/images/mindful_path_nature-1200.webp';
+import mindfulPathNatureJpg480 from '../assets/images/mindful_path_nature-480.jpg';
 
 export const TopicsSection: React.FC = () => {
   return (
@@ -79,12 +88,23 @@ export const TopicsSection: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 relative h-[180px] sm:h-auto sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
-              <img
-                src={calmSunlightWallImg}
-                alt="Mierīga, klusa telpa ar saules gaismu un maigām ēnām"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${calmSunlightWallWebp480} 480w, ${calmSunlightWallWebp800} 800w, ${calmSunlightWallWebp} 1200w`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                />
+                <img
+                  src={calmSunlightWallImg}
+                  srcSet={`${calmSunlightWallJpg480} 480w, ${calmSunlightWallImg} 1200w`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  alt="Mierīga, klusa telpa ar saules gaismu un maigām ēnām"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </picture>
               <div className="absolute inset-0 bg-[#1C2733]/5 pointer-events-none" />
             </div>
           </motion.div>
@@ -229,12 +249,23 @@ export const TopicsSection: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 relative h-[180px] sm:h-auto sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
-              <img
-                src={mindfulPathNatureImg}
-                alt="Cilvēks dabā mierīgā ceļā uz dabisku apvārsni"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${mindfulPathNatureWebp480} 480w, ${mindfulPathNatureWebp800} 800w, ${mindfulPathNatureWebp1200} 1200w`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                />
+                <img
+                  src={mindfulPathNatureImg}
+                  srcSet={`${mindfulPathNatureJpg480} 480w, ${mindfulPathNatureImg} 1200w`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  alt="Cilvēks dabā mierīgā ceļā uz dabisku apvārsni"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </picture>
               <div className="absolute inset-0 bg-[#1C2733]/5 pointer-events-none" />
             </div>
           </motion.div>
