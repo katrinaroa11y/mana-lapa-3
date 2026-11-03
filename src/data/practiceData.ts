@@ -196,7 +196,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     id: 'faq-2',
-    question: 'Cik gara ir kosultācija un cik bieži konsultācijām pie psihologa ir jānotiek?',
+    question: 'Cik gara ir konsultācija un cik bieži konsultācijām pie psihologa ir jānotiek?',
     answer: 'Vienas konsultācijas ilgums manā praksē ir 50-60 minūtes atkarībā no izvēlētās metodes. Parasti konsultācijas sākumā notiek reizi nedēļā vai reizi divās nedēļās, lai procesam būtu secīgums un veidotos dziļāka sadarbība ar psihologu. Taču iespējams vienoties arī par citu biežumu, atkarībā no Tavām vēlmēm un iespējām.',
     category: 'Process'
   },
