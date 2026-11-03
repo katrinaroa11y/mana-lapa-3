@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { BLOG_POSTS } from '../data/blogData';
@@ -44,7 +45,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
   return (
     <article className="pt-28 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] min-h-screen border-b border-[#E3DDD3]">
       <div className="max-w-4xl mx-auto">
-        
+
         {/* Top Navigation & Breadcrumbs */}
         <div className="mb-8 flex items-center justify-between border-b border-[#E3DDD3] pb-4">
           <button
@@ -102,31 +103,13 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-12 rounded-sm overflow-hidden border border-[#E3DDD3] shadow-[0_4px_20px_-4px_rgba(28,39,51,0.06)] bg-[#FFFFFF]"
         >
-          <picture>
-            <source
-              type="image/webp"
-              srcSet={`
-                ${post.featuredImage.replace(/\.jpg$/, '-480.webp')} 480w,
-                ${post.featuredImage.replace(/\.jpg$/, '-800.webp')} 800w,
-                ${post.featuredImage.replace(/\.jpg$/, '-1200.webp')} 1200w
-              `}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px"
-            />
-            <img
-              src={post.featuredImage}
-              srcSet={`
-                ${post.featuredImage.replace(/\.jpg$/, '-480.jpg')} 480w,
-                ${post.featuredImage.replace(/\.jpg$/, '-800.jpg')} 800w,
-                ${post.featuredImage} 1200w
-              `}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px"
-              alt={post.title}
-              loading="lazy"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              className="w-full h-[280px] sm:h-[420px] object-cover object-center"
-            />
-          </picture>
+          <img
+            src={post.featuredImage}
+            alt={post.title}
+            loading="eager"
+            decoding="async"
+            className="block w-full h-[280px] sm:h-[420px] object-cover object-center"
+          />
         </motion.div>
 
         {/* Article Content Body */}
@@ -150,10 +133,12 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
                 onOpenBooking();
                 return;
               }
+
               const navSection = (e.target as HTMLElement).closest('[data-navigate-section]');
               if (navSection) {
                 e.preventDefault();
                 const section = navSection.getAttribute('data-navigate-section');
+
                 if (onNavigateHome) {
                   onNavigateHome(section || undefined);
                 } else {
@@ -168,9 +153,10 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
                 <h2 className="font-serif text-2xl text-[#1C2733] font-semibold pt-2">
                   {sec.heading}
                 </h2>
-                <div 
+
+                <div
                   className="whitespace-pre-line leading-relaxed [&>b]:font-bold [&>b]:text-[#1C2733] [&>strong]:font-bold [&>strong]:text-[#1C2733]"
-                  dangerouslySetInnerHTML={{ __html: sec.body }} 
+                  dangerouslySetInnerHTML={{ __html: sec.body }}
                 />
               </div>
             ))}
@@ -178,27 +164,23 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
 
           {/* Author Box */}
           <div className="mt-12 pt-8 border-t border-[#E3DDD3] flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left bg-[#FAF8F5] p-6 sm:p-7 rounded-sm border border-[#E3DDD3]">
-            <picture>
-              <source
-                type="image/webp"
-                srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.webp"
-              />
-              <img
-                src={katrinaPortrait}
-                alt={post.author}
-                loading="lazy"
-                decoding="async"
-                referrerPolicy="no-referrer"
-                className="w-16 h-16 rounded-sm object-cover border border-[#D1C9BC] shadow-xs shrink-0"
-              />
-            </picture>
+            <img
+              src={katrinaPortrait}
+              alt={post.author}
+              loading="lazy"
+              decoding="async"
+              className="w-16 h-16 rounded-sm object-cover border border-[#D1C9BC] shadow-xs shrink-0"
+            />
+
             <div className="space-y-1.5">
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#668261]">
                 {post.author.includes('&') ? 'Meistarklases vadītājas' : 'Raksta autore'}
               </span>
+
               <h4 className="font-serif text-lg text-[#1C2733] font-semibold">
                 {post.author}
               </h4>
+
               <p className="text-xs text-[#455260] font-normal leading-relaxed">
                 {post.author.includes('&')
                   ? 'Psiholoģes Katrīna Rozenbaha un Elza Krasta – apvieno praktiski pielietojamu psiholoģijas zinātni ar empātisku pieeju pašizziņai un izaugsmei.'
@@ -212,6 +194,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
             <p className="text-base text-[#1C2733]">
               Vēlies uzzināt vairāk par rakstā aplūkoto tēmu?
             </p>
+
             <button
               onClick={onOpenBooking}
               className="bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] py-3.5 px-8 rounded-md font-medium text-sm tracking-wide transition-all shadow-xs hover:shadow-sm cursor-pointer border border-[#e08e69] hover:border-[#cb7c57]"
@@ -219,7 +202,6 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
               Piesakies konsultācijai
             </button>
           </div>
-
         </motion.div>
 
         {/* Other Posts Section */}
@@ -230,6 +212,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
                 <BookOpen className="w-5 h-5 text-[#668261]" />
                 <span>Citi saistītie raksti</span>
               </h3>
+
               <button
                 onClick={onBackToBlogs}
                 className="text-xs font-semibold uppercase tracking-wider text-[#1C2733] hover:text-[#668261] transition-colors"
@@ -249,10 +232,12 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#668261]">
                       {otherPost.category}
                     </span>
+
                     <h4 className="font-serif text-lg text-[#1C2733] font-semibold group-hover:text-[#668261] transition-colors line-clamp-2">
                       {otherPost.title}
                     </h4>
                   </div>
+
                   <div className="pt-4 flex items-center justify-between text-xs text-[#6E7D8C] font-mono">
                     <span>{otherPost.date}</span>
                     <span className="font-medium text-[#1C2733] group-hover:text-[#668261] group-hover:translate-x-1 transition-transform">
@@ -269,3 +254,4 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
     </article>
   );
 };
+
