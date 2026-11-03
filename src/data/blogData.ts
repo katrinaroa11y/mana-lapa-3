@@ -80,7 +80,7 @@ Vai arī šeit:
           heading: 'Vai šī pieredze var tikt iegādāta kā dāvana?',
           body: `Var rasties jautājums: <b>ko dāvināt draudzenei, māsai, sievai, mammai vai mīļotajam cilvēkam svētkos?</b> Ja meklē Ziemassvētku, dzimšanas dienas vai kāda cita īpaša notikuma dāvanu sev tuvam cilvēkam un nevēlies izvēlēties kārtējo lietu, kas nonāks plauktā, vai šķiet, ka ''viņai/ viņam jau viss ir'', tad šī meistarklase ir tieši laikā.
 
-<i>Vision board</i> meistarklase derētu kā dāvana sievietei vai vīrietim, kuram interesē psiholoģija, pašizziņa, iespējams, raksta pats savu dienasgrāmatu, patīk plānot lietas, <b>bet dzīves, darba un ģimenes rūpju skrējienā bieži neatliek laiks sev.</b> Trīs stundas Coffee Society mājīgajā atmosfērā, viņš/ viņa mūsu vadībā <b>varēs pievērsties sev, izveidot savu <i>vision board</i>, sajust mieru un doties mājās ar jauniem psiholoģijā balstītiem resursiem</b> un skaidrāku vīziju nākamajam gadam.
+<i>Vision board</i> meistarklase derētu kā dāvana kādam, kuram interesē pašizziņa, patīk lasīt un interesējās par psiholoģiju, varbūt pat raksta savu dienasgrāmatu vai plānotāju, <b>bet dzīves, darba un ģimenes rūpju skrējienā bieži neatliek laiks sev.</b> Trīs stundas Coffee Society mājīgajā atmosfērā, viņš/ viņa mūsu vadībā <b>varēs pievērsties sev, izveidot savu <i>vision board</i>, sajust mieru un doties mājās ar jauniem psiholoģijā balstītiem resursiem</b> un skaidrāku vīziju nākamajam gadam.
 
 <b>Ja meistarklasi dāvināsi un attiecīgi vēlies tai skaistu noformējumu, raksti man uz e-pastu vai WhatsApp (skatīt <a href="/#kontakti" data-navigate-section="kontakti" class="underline text-[#668261] font-medium hover:text-[#4F684B]">Kontakti</a> sadaļu).</b>`
         },
