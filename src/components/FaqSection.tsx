@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { FAQS } from '../data/practiceData';
 import { ChevronDown, MessageCircle } from 'lucide-react';
 
@@ -13,11 +14,14 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
   );
 
   const toggleFaq = (id: string) => {
-    setOpenId(openId === id ? null : id);
+    setOpenId((currentId) => (currentId === id ? null : id));
   };
 
   return (
-    <section id="buj" className="py-24 sm:py-32 bg-[#FFFFFF] border-b border-[#E3DDD3]">
+    <section
+      id="buj"
+      className="py-24 sm:py-32 bg-[#FFFFFF] border-b border-[#E3DDD3]"
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -31,7 +35,7 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18] mb-5">
-          Jautājumi un atbildes
+            Jautājumi un atbildes
           </h2>
 
           <p className="text-base sm:text-lg text-[#455260] leading-relaxed">
@@ -40,10 +44,11 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
           </p>
         </div>
 
-        {/* Accordions */}
+        {/* FAQ Accordion */}
         <div className="space-y-4">
           {FAQS.map((faq) => {
             const isOpen = openId === faq.id;
+            const answerId = `faq-answer-${faq.id}`;
 
             return (
               <div
@@ -54,6 +59,8 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
                   id={`faq-toggle-${faq.id}`}
                   type="button"
                   onClick={() => toggleFaq(faq.id)}
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
                   className="w-full text-left p-6 flex items-center justify-between space-x-4 focus:outline-none group cursor-pointer"
                 >
                   <span className="font-serif text-lg sm:text-xl font-bold text-[#1C2733] group-hover:text-[#668261] transition-colors leading-snug">
@@ -62,28 +69,32 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
 
                   <div
                     className={`w-8 h-8 rounded-sm bg-[#FFFFFF] border border-[#D1C9BC] flex items-center justify-center shrink-0 text-[#668261] transition-all duration-300 ${
-                      isOpen ? 'rotate-180 bg-[#668261] text-[#FAF8F5] border-[#668261]' : ''
+                      isOpen
+                        ? 'rotate-180 bg-[#668261] text-[#FAF8F5] border-[#668261]'
+                        : ''
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 text-sm sm:text-base text-[#455260] leading-[1.8] border-t border-[#E3DDD3]/70 pt-4 font-normal">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* All answers remain in the initial HTML */}
+                <motion.div
+                  id={answerId}
+                  initial={false}
+                  animate={{
+                    height: isOpen ? 'auto' : 0,
+                    opacity: isOpen ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.28 }}
+                  className="overflow-hidden"
+                  aria-hidden={!isOpen}
+                  inert={!isOpen}
+                >
+                  <div className="px-6 pb-6 text-sm sm:text-base text-[#455260] leading-[1.8] border-t border-[#E3DDD3]/70 pt-4 font-normal">
+                    {faq.answer}
+                  </div>
+                </motion.div>
               </div>
             );
           })}
@@ -93,9 +104,9 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
         <div className="mt-14 p-7 sm:p-8 rounded-sm bg-[#FAF8F5] border border-[#E3DDD3] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)]">
 
           <div className="text-center sm:text-left">
-            <h4 className="font-serif text-lg font-bold text-[#1C2733] mb-1">
+            <h3 className="font-serif text-lg font-bold text-[#1C2733] mb-1">
               Palika neatbildēts jautājums?
-            </h4>
+            </h3>
 
             <p className="text-sm text-[#6E7D8C]">
               Raksti man uz e-pastu
