@@ -65,6 +65,7 @@ function createMetadata(page) {
 
   if (page.post?.featuredImage) {
     const imageUrl = new URL(page.post.featuredImage, siteUrl).href;
+
     tags.push(
       `<meta property="og:image" content="${escapeHtml(imageUrl)}">`,
       `<meta name="twitter:image" content="${escapeHtml(imageUrl)}">`
@@ -112,7 +113,18 @@ for (const page of pages) {
     `<div id="root">${html}</div>`
   );
 
-  output = output.replace('</head>', `    ${createMetadata(page)}\n  </head>`);
+  // Remove default metadata from index.html
+  output = output
+    .replace(/<title>[\s\S]*?<\/title>/i, '')
+    .replace(/<meta\s+name="description"[^>]*\/?>/i, '')
+    .replace(/<meta\s+property="og:title"[^>]*\/?>/i, '')
+    .replace(/<meta\s+property="og:description"[^>]*\/?>/i, '');
+
+  // Add unique metadata for this page
+  output = output.replace(
+    '</head>',
+    `    ${createMetadata(page)}\n  </head>`
+  );
 
   const relativePath =
     page.url === '/'
@@ -128,3 +140,4 @@ for (const page of pages) {
 }
 
 console.log(`Finished prerendering ${pages.length} pages.`);
+
