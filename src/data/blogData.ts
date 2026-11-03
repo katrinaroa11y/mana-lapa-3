@@ -32,7 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '4 min lasījums',
     category: 'Meistarklase & Pašizziņa',
     excerpt: 'Vision board un pašizziņas meistarklase Rīgā | 9. janvāris | 2027. Aicinu Tevi pievienoties psihologu vadītā meistarklasē Rīgā, kur psiholoģijas zinātne satiekas ar pašizziņu.',
-    featuredImage: '/blog_vision_board_workshop.jpg',
+    featuredImage: '/5739029c773ea7f817c2ac19fafdccd9.jpg',
     content: {
       intro: 'Vision board un pašizziņas meistarklase Rīgā | 9. janvāris | 2027\nAicinu Tevi pievienoties psihologu vadītā meistarklasē Rīgā, kur psiholoģijas zinātne satiekas ar pašizziņu un sāc jauno gadu ar mieru un pārliecību.',
       sections: [
