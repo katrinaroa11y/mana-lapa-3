@@ -82,6 +82,7 @@ export default function App() {
             onBackToBlogs={() => navigate('/blogs')}
             onSelectPost={(slug) => navigate(`/blogs/${slug}`)}
             onOpenBooking={() => handleOpenBooking()}
+            onNavigateHome={handleNavigateHome}
           />
         ) : isBlogsPage ? (
           /* Blog List Page (/blogs) */

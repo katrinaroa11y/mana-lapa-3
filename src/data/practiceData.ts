@@ -229,7 +229,7 @@ export const FAQS: FaqItem[] = [
 export const TIME_SLOTS = [
   '17:30',
   '18:30',
-  'Par pierakstu klātienē vai sestdienā atzīmē šo lauciņu un sazināšos ar Tevi personīgi'
+  'Par citu laiku vai pierakstu klātienē atzīmē šo lauciņu un sazināšos ar Tevi personīgi'
 ];
 
 export const WORK_TOPICS: WorkTopic[] = [

@@ -10,6 +10,7 @@ interface BlogPostSingleProps {
   onBackToBlogs: () => void;
   onSelectPost: (slug: string) => void;
   onOpenBooking: () => void;
+  onNavigateHome?: (sectionId?: string) => void;
 }
 
 export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
@@ -17,6 +18,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
   onBackToBlogs,
   onSelectPost,
   onOpenBooking,
+  onNavigateHome,
 }) => {
   const post = BLOG_POSTS.find((p) => p.slug === slug) || BLOG_POSTS[0];
 
@@ -135,12 +137,32 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
           className="bg-[#FFFFFF] rounded-sm border border-[#E3DDD3] p-7 sm:p-10 lg:p-14 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] space-y-8"
         >
           {/* Intro Lead */}
-          <p className="text-base sm:text-lg text-[#1C2733] font-normal leading-relaxed border-l-2 border-[#668261] pl-5 py-1 italic font-serif">
+          <p className="text-base sm:text-lg text-[#1C2733] font-normal leading-relaxed border-l-2 border-[#668261] pl-5 py-1 italic font-serif whitespace-pre-line">
             {post.content.intro}
           </p>
 
           {/* Section Paragraphs */}
-          <div className="space-y-8 text-base text-[#455260] leading-[1.8] font-normal">
+          <div
+            onClick={(e) => {
+              const target = (e.target as HTMLElement).closest('[data-booking-trigger="true"]');
+              if (target) {
+                e.preventDefault();
+                onOpenBooking();
+                return;
+              }
+              const navSection = (e.target as HTMLElement).closest('[data-navigate-section]');
+              if (navSection) {
+                e.preventDefault();
+                const section = navSection.getAttribute('data-navigate-section');
+                if (onNavigateHome) {
+                  onNavigateHome(section || undefined);
+                } else {
+                  window.location.href = section ? `/#${section}` : '/';
+                }
+              }
+            }}
+            className="space-y-8 text-base text-[#455260] leading-[1.8] font-normal"
+          >
             {post.content.sections.map((sec, idx) => (
               <div key={idx} className="space-y-3">
                 <h2 className="font-serif text-2xl text-[#1C2733] font-semibold pt-2">
@@ -172,13 +194,15 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
             </picture>
             <div className="space-y-1.5">
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#668261]">
-                Raksta autore
+                {post.author.includes('&') ? 'Meistarklases vadītājas' : 'Raksta autore'}
               </span>
               <h4 className="font-serif text-lg text-[#1C2733] font-semibold">
                 {post.author}
               </h4>
               <p className="text-xs text-[#455260] font-normal leading-relaxed">
-                Reģistrēta psiholoģe (Reģ. Nr. 7001430). Specializējas klīniskajā psiholoģijā, izmanto EMDR un shēmu terapijas metodes.
+                {post.author.includes('&')
+                  ? 'Psiholoģes Katrīna Rozenbaha un Elza Krasta – apvieno praktiski pielietojamu psiholoģijas zinātni ar empātisku pieeju pašizziņai un izaugsmei.'
+                  : 'Reģistrēta psiholoģe (Reģ. Nr. 7001430). Specializējas klīniskajā psiholoģijā, izmanto EMDR un shēmu terapijas metodes.'}
               </p>
             </div>
           </div>

@@ -12,11 +12,16 @@ interface BookingModalProps {
 
 const BOOKABLE_SERVICES = SERVICES.filter((s) => s.id !== 'nodarbibas-un-lekcijas');
 
-const isWeekendSelected = (dateStr: string) => {
+const isSundaySelected = (dateStr: string) => {
   if (!dateStr) return false;
   const d = new Date(dateStr + 'T00:00:00');
-  const day = d.getDay();
-  return day === 0 || day === 6; // 0 = Sunday, 6 = Saturday
+  return d.getDay() === 0; // 0 = Sunday
+};
+
+const isSaturdaySelected = (dateStr: string) => {
+  if (!dateStr) return false;
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.getDay() === 6; // 6 = Saturday
 };
 
 const getFullyBookedMessage = (dateStr: string): string | null => {
@@ -36,15 +41,14 @@ const isFullyBookedDate = (dateStr: string) => {
 };
 
 const isDateUnavailable = (dateStr: string) => {
-  return isWeekendSelected(dateStr) || isFullyBookedDate(dateStr);
+  return isSundaySelected(dateStr) || isFullyBookedDate(dateStr);
 };
 
-const getInitialWorkday = () => {
+const getInitialAvailableDate = () => {
   const d = new Date();
   d.setDate(d.getDate() + 1);
   while (
-    d.getDay() === 0 ||
-    d.getDay() === 6 ||
+    d.getDay() === 0 || // Svētdienās slēgts, sestdienās atvērts
     isFullyBookedDate(d.toISOString().split('T')[0])
   ) {
     d.setDate(d.getDate() + 1);
@@ -66,18 +70,39 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     ? preselectedServiceId
     : BOOKABLE_SERVICES[0].id;
 
+  const initialDate = getInitialAvailableDate();
+  const initialIsSaturday = isSaturdaySelected(initialDate);
+
   // Form State
   const [formData, setFormData] = useState<BookingFormData>({
     serviceId: initialServiceId,
     format: '',
-    date: getInitialWorkday(),
-    timeSlot: TIME_SLOTS[0],
+    date: initialDate,
+    timeSlot: initialIsSaturday ? '11:00' : TIME_SLOTS[0],
     fullName: '',
     email: '',
     phone: '',
     message: '',
     agreedToTerms: true
   });
+
+  const handleDateChange = (newDate: string) => {
+    const wasSaturday = isSaturdaySelected(formData.date);
+    const nowSaturday = isSaturdaySelected(newDate);
+
+    let updatedSlot = formData.timeSlot;
+    if (nowSaturday && !wasSaturday) {
+      updatedSlot = '11:00';
+    } else if (!nowSaturday && wasSaturday) {
+      updatedSlot = TIME_SLOTS[0];
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      date: newDate,
+      timeSlot: updatedSlot,
+    }));
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -345,14 +370,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
                     <div>
                       <span className="block text-xs text-[#6E7D8C] mb-2 font-mono uppercase tracking-wider">
-                        Izvēlieties vēlamo datumu (Darba dienās P. – Pk.):
+                        Izvēlieties vēlamo datumu (Pirmdiena – Sestdiena):
                       </span>
                       <input
                         type="date"
                         required
                         min={new Date().toISOString().split('T')[0]}
                         value={formData.date}
-                        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                        onChange={(e) => handleDateChange(e.target.value)}
                         className={`w-full p-3.5 rounded-sm border text-sm focus:outline-none transition-all ${
                           isDateUnavailable(formData.date)
                             ? 'border-amber-400 bg-amber-50/50 text-amber-900 focus:border-amber-400'
@@ -369,26 +394,33 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                             <span>Lūdzu, izvēlieties citu datumu.</span>
                           </div>
                         </div>
-                      ) : isWeekendSelected(formData.date) ? (
+                      ) : isSundaySelected(formData.date) ? (
                         <div className="p-3.5 rounded-sm bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start space-x-2.5 mt-2">
                           <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                           <div>
                             <strong className="font-semibold block text-amber-900 mb-0.5">
-                              Sestdienās un svētdienās konsultācijas nenotiek.
+                              Svētdienās konsultācijas nenotiek.
                             </strong>
-                            <span>Lūdzu, izvēlieties darba dienu (pirmdiena – piektdiena).</span>
+                            <span>Lūdzu, izvēlieties darba dienu vai sestdienu (pirmdiena – sestdiena).</span>
                           </div>
                         </div>
                       ) : null}
                     </div>
 
                     <div>
-                      <span className="block text-xs text-[#6E7D8C] mb-2 font-mono uppercase tracking-wider">
-                        Pieejamie laika lauki:
-                      </span>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="block text-xs text-[#6E7D8C] font-mono uppercase tracking-wider">
+                          Pieejamie laika lauki {isSaturdaySelected(formData.date) ? '(Sestdiena)' : '(Darba dienas)'}:
+                        </span>
+                        {isSaturdaySelected(formData.date) && (
+                          <span className="text-[11px] font-mono text-[#668261] bg-[#668261]/10 px-2 py-0.5 rounded-xs font-semibold">
+                            Sestdienas pieraksts
+                          </span>
+                        )}
+                      </div>
                       <div className="space-y-2.5">
                         <div className="grid grid-cols-2 gap-3">
-                          {TIME_SLOTS.slice(0, 2).map((slot) => (
+                          {(isSaturdaySelected(formData.date) ? ['11:00', '12:00'] : TIME_SLOTS.slice(0, 2)).map((slot) => (
                             <button
                               type="button"
                               key={slot}

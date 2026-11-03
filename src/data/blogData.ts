@@ -23,6 +23,86 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: '4',
+    slug: 'vision-board-meistarklase-2027',
+    title: 'Vision Board Meistarklase 2027',
+    author: 'Katrīna Rozenbaha & Elza Krasta',
+    date: '2026. gads',
+    dateISO: '2026-12-01',
+    readTime: '4 min lasījums',
+    category: 'Meistarklase & Pašizziņa',
+    excerpt: 'Vision board un pašizziņas meistarklase Rīgā | 9. janvāris | 2027. Aicinu Tevi pievienoties psihologu vadītā meistarklasē Rīgā, kur psiholoģijas zinātne satiekas ar pašizziņu.',
+    featuredImage: '/blog_vision_board_workshop.jpg',
+    content: {
+      intro: 'Vision board un pašizziņas meistarklase Rīgā | 9. janvāris | 2027\nAicinu Tevi pievienoties psihologu vadītā meistarklasē Rīgā, kur psiholoģijas zinātne satiekas ar pašizziņu un sāc jauno gadu ar mieru un pārliecību.',
+      sections: [
+        {
+          heading: 'Kam paredzēta meistarklase?',
+          body: `Meistarklase ir piemērota ikvienam, kurš vēlas sevi iepazīt mazliet dziļāk. Tā būs noderīga, ja:
+• <b>vēlies labāk izprast sevi</b>, savas vērtības un emocijas;
+• <b>jūties iestrēdzis</b> vai gluži vienkārši esi gatavs apstāties un pārskatīt, kas dzīvē Tev ir nozīmīgs;
+• <b>gribi skaidrāku redzējumu</b> par to, uz ko virzīties 2027. gadā;
+• <b>meklē mierīgu, atbalstošu vidi</b> un patīkamu kompāniju;
+• <b>vēlies saņemt praktiskus rīkus un apzinātības tehnikas</b>, ko izmantot arī pēc pasākuma.
+
+<b>Iepriekšēja pieredze nav nepieciešama.</b> Pietiek ar vēlmi piedalīties.`
+        },
+        {
+          heading: 'Ko tu iegūsi?',
+          body: `Meistarklases laikā, Tu:
+• <b>Iegūsi dziļāku izpratni</b> par sevi, savām vērtībām un emocijām;
+• <b>Izzināsi savu <i>dzīves apli</i></b>;
+• <b>Apzināti izveidosi</b> savu 2027. gada vīziju un vision board, ko paņemt līdzi;
+• <b>Stiprināsi savus iekšējos resursus</b> ar kādu EMDR balstītu resursu stiprināšanas vingrinājumu.
+Pēc vision board veidošanas saņemsi arī uzdevumus un psihologu veidotās darba lapas tālākajam pašizziņas darbam.`
+        },
+        {
+          heading: 'Kad un kur notiks?',
+          body: `<b>Datums:</b> 9. janvāris, sestdiena
+<b>Laiks:</b> 11.00–14.00
+<b>Vieta:</b> Coffee Society, Tērbatas iela 72, Rīga`
+        },
+        {
+          heading: 'Pieteikšanās',
+          body: `<b>Cena:</b> 80 EUR par 3 stundu meistarklasi.
+<b>Cenā iekļauts:</b>
+• visi nepieciešamie materiāli;
+• kafija un uzkodas;
+• uzdevumi tālākajam pašizziņas darbam;
+• pēc izvēles - iespēja palikt ilgāk uz kādu sarunu pēc meistarklases.
+
+<b>Pieteikšanās:</b> rakstot uz <a href="mailto:katrina.rozenbaha@gmail.com?subject=Pieteikums%20Vision%20Board%20Meistarklasei" class="underline text-[#668261] font-medium hover:text-[#4F684B]">katrina.rozenbaha@gmail.com</a>
+
+Vai arī šeit:
+<div class="pt-3 pb-2"><a href="https://buy.stripe.com/5kQ7sK3YAdI04Xgare0VO09" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-2 bg-[#5a855a] hover:bg-[#4b714b] text-[#FAF8F5] px-7.5 py-3.5 rounded-md font-semibold text-[15px] tracking-wider uppercase transition-all shadow-xs hover:shadow-md cursor-pointer border border-[#5a855a] hover:border-[#4b714b] no-underline">REZERVĀCIJA</a></div>`
+        },
+        {
+          heading: 'Vai šī pieredze var tikt iegādāta kā dāvana?',
+          body: `Var rasties jautājums: <b>ko dāvināt draudzenei, māsai, sievai, mammai vai mīļotajam cilvēkam svētkos?</b> Ja meklē Ziemassvētku, dzimšanas dienas vai kāda cita īpaša notikuma dāvanu sev tuvam cilvēkam un nevēlies izvēlēties kārtējo lietu, kas nonāks plauktā, vai šķiet, ka ''viņai/ viņam jau viss ir'', tad šī meistarklase ir tieši laikā.
+
+<i>Vision board</i> meistarklase derētu kā dāvana sievietei vai vīrietim, kuram interesē psiholoģija, pašizziņa, iespējams, raksta pats savu dienasgrāmatu, patīk plānot lietas, <b>bet dzīves, darba un ģimenes rūpju skrējienā bieži neatliek laiks sev.</b> Trīs stundas Coffee Society mājīgajā atmosfērā, viņš/ viņa mūsu vadībā <b>varēs pievērsties sev, izveidot savu <i>vision board</i>, sajust mieru un doties mājās ar jauniem psiholoģijā balstītiem resursiem</b> un skaidrāku vīziju nākamajam gadam.
+
+<b>Ja meistarklasi dāvināsi un attiecīgi vēlies tai skaistu noformējumu, raksti man uz e-pastu vai WhatsApp (skatīt <a href="/#kontakti" data-navigate-section="kontakti" class="underline text-[#668261] font-medium hover:text-[#4F684B]">Kontakti</a> sadaļu).</b>`
+        },
+        {
+          heading: 'Kas vada meistarklasi?',
+          body: `Meistarklasi vada psiholoģes <b>Katrīna Rozenbaha</b> un <b>Elza Krasta</b>. Viņas apvieno praktiski pielietojamas psiholoģijas zināšanas ar empātisku pieeju, lai ikvienam dalībniekam būtu droši un ērti iepazīt sevi.
+
+<b>Katrīna Rozenbaha</b> – klīniskā un veselības psiholoģe ar maģistra grādu psiholoģijā. Savā privātpraksē strādā ar EMDR un shēmu terapijas metodēm, palīdzot cilvēkiem pārvarēt trauksmi, attiecību grūtības, izdegšanu un stiprināt iekšējos resursus.
+
+<b>Elza Krasta</b> – klīniskā un veselības psiholoģe ar maģistra grādu psiholoģijā. Pašizaugsmes platformas @atplaukt veidotāja. Savā privātpraksē strādā ar EMDR un shēmu terapijas metodēm, vada lekcijas un seminārus par apzinātību, emocionālo labbūtību un pašvērtējumu.`
+        }
+      ],
+      keyTakeaways: [
+        'Zinātniski pamatota pašizziņas pieeja un EMDR resursu stiprināšanas vingrinājumi.',
+        'Mājīga, iedvesmojoša atmosfēra Coffee Society telpās, iekļauti visi materiāli un uzkodas.',
+        'Paņem līdzi gatavu 2027. gada vīziju un darba lapas patstāvīgam darbam.'
+      ],
+      quote: 'Sāc 2027. gadu ar mieru, skaidrību un apzināti veidotu vīziju savai iekšējai izaugsmei.',
+      conclusion: 'Vietu skaits grupā ir ierobežots, lai nodrošinātu drošu un personīgu gaisotni. Piesakies savlaicīgi, rakstot uz e-pastu vai veicot rezervāciju!'
+    }
+  },
+  {
     id: '1',
     slug: 'emdr-terapija-ka-ta-palidz-traumu-gadijumos',
     title: 'EMDR terapija: Kā tā palīdz apstrādāt traumas un samazināt trauksmi?',

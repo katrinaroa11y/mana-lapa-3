@@ -10,8 +10,8 @@ interface BlogListProps {
 }
 
 export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true }) => {
-  // Exactly 3 posts for 1 single row on desktop grid
-  const postsRow = BLOG_POSTS.slice(0, 3);
+  // Show all posts on full blog page, or the 3 latest posts on homepage
+  const postsRow = isPage ? BLOG_POSTS : BLOG_POSTS.slice(0, 3);
 
   const containerClasses = isPage
     ? "pt-28 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] min-h-screen border-b border-[#E3DDD3]"
