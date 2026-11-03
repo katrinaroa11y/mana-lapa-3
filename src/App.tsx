@@ -17,8 +17,10 @@ export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedServiceId, setSelectedServiceId] = useState<string | undefined>(undefined);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
-  const [currentPath, setCurrentPath] = useState<string>(() => window.location.pathname);
-
+ const [currentPath, setCurrentPath] = useState<string>(
+  () => typeof window !== 'undefined' ? window.location.pathname : '/'
+);
+  
   useEffect(() => {
     const handleLocationChange = () => {
       setCurrentPath(window.location.pathname);
