@@ -119,73 +119,75 @@ export const Header: React.FC<HeaderProps> = ({
           : 'bg-[#FAF8F5]/80 backdrop-blur-xs border-b border-[#E3DDD3]/60 py-3 sm:py-3.5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo / Brand */}
-        <a
-          href="/"
-          onClick={handleLogoClick}
-          className="group flex items-center space-x-3.5 text-left"
-        >
-          <div className="w-9 h-9 rounded-sm bg-[#F4EFEA] border border-[#D1C9BC] flex items-center justify-center text-[#1C2733] group-hover:border-[#1C2733] group-hover:bg-[#1C2733] group-hover:text-[#FAF8F5] transition-all duration-300 shrink-0">
-            <span className="font-serif text-sm font-semibold tracking-wider">
-              KR
-            </span>
-          </div>
-
-          <div>
-            <span className="block font-serif text-xl sm:text-2xl font-normal text-[#1C2733] tracking-tight group-hover:text-[#668261] transition-colors leading-none">
-              {PRACTICE_INFO.name}
-            </span>
-
-            <span className="block text-[10px] sm:text-[11px] text-[#6E7D8C] uppercase tracking-[0.18em] font-medium mt-1">
-              Klīniskā psiholoģe
-            </span>
-          </div>
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-7">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[15.4px] font-medium tracking-wide text-[#455260] hover:text-[#1C2733] transition-colors py-1 relative group whitespace-nowrap"
-            >
-              <span>{link.name}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#1C2733] transition-all duration-200 group-hover:w-full" />
-            </a>
-          ))}
-        </nav>
-
-        {/* Action Buttons & Mobile Menu Toggle */}
-        <div className="flex items-center space-x-3">
-          <div className="hidden sm:flex flex-col gap-1.5">
-            <button
-              onClick={() => onOpenBooking()}
-              className="w-full inline-flex items-center justify-center space-x-2 bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] py-2.5 px-5 rounded-md text-xs sm:text-sm font-medium tracking-wide transition-all cursor-pointer border border-[#e08e69] hover:border-[#cb7c57] shadow-xs whitespace-nowrap"
-            >
-              <Calendar className="w-3.5 h-3.5 shrink-0" />
-              <span>Pieteikties</span>
-            </button>
-
-            <button
-              onClick={handleMeistarklaseClick}
-              className="w-full inline-flex items-center justify-center space-x-2 bg-[#668261] hover:bg-[#546E50] text-[#FAF8F5] py-2.5 px-5 rounded-md text-xs sm:text-sm font-medium tracking-wide transition-all cursor-pointer border border-[#668261] hover:border-[#546E50] shadow-xs whitespace-nowrap"
-            >
-              <Sparkles className="w-3.5 h-3.5 shrink-0" />
-              <span>Meistarklase 2027</span>
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-[#1C2733] hover:bg-[#ECE6DD]/60 transition-colors border border-transparent hover:border-[#D1C9BC]"
-            aria-label="Toggle menu"
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+          {/* Logo / Brand */}
+          <a
+            href="/"
+            onClick={handleLogoClick}
+            className="group flex items-center space-x-3.5 text-left shrink-0"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            <div className="w-9 h-9 rounded-sm bg-[#F4EFEA] border border-[#D1C9BC] flex items-center justify-center text-[#1C2733] group-hover:border-[#1C2733] group-hover:bg-[#1C2733] group-hover:text-[#FAF8F5] transition-all duration-300 shrink-0">
+              <span className="font-serif text-sm font-semibold tracking-wider">
+                KR
+              </span>
+            </div>
+
+            <div>
+              <span className="block font-serif text-xl sm:text-2xl font-normal text-[#1C2733] tracking-tight group-hover:text-[#668261] transition-colors leading-none">
+                {PRACTICE_INFO.name}
+              </span>
+
+              <span className="block text-[10px] sm:text-[11px] text-[#6E7D8C] uppercase tracking-[0.18em] font-medium mt-1">
+                Klīniskā psiholoģe
+              </span>
+            </div>
+          </a>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center lg:space-x-2.5 xl:space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-[17px] font-medium tracking-normal xl:tracking-wide text-[#373737] hover:text-[#1C2733] transition-colors py-1 relative group whitespace-nowrap"
+              >
+                <span>{link.name}</span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-[#1C2733] transition-all duration-200 group-hover:w-full" />
+              </a>
+            ))}
+          </nav>
+
+          {/* Action Buttons & Mobile Menu Toggle */}
+          <div className="flex items-center gap-3 lg:gap-0 shrink-0">
+            <div className="hidden sm:flex flex-col gap-1.5">
+              <button
+                onClick={() => onOpenBooking()}
+                className="w-full inline-flex items-center justify-center space-x-2 bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] py-2.5 px-4 xl:px-5 rounded-md text-xs sm:text-sm font-medium tracking-wide transition-all cursor-pointer border border-[#e08e69] hover:border-[#cb7c57] shadow-xs whitespace-nowrap"
+              >
+                <Calendar className="w-3.5 h-3.5 shrink-0" />
+                <span>Pieteikties</span>
+              </button>
+
+              <button
+                onClick={handleMeistarklaseClick}
+                className="w-full inline-flex items-center justify-center space-x-2 bg-[#668261] hover:bg-[#546E50] text-[#FAF8F5] py-2.5 px-4 xl:px-5 rounded-md text-xs sm:text-sm font-medium tracking-wide transition-all cursor-pointer border border-[#668261] hover:border-[#546E50] shadow-xs whitespace-nowrap"
+              >
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                <span>Meistarklase 2027</span>
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-md text-[#1C2733] hover:bg-[#ECE6DD]/60 transition-colors border border-transparent hover:border-[#D1C9BC]"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -198,7 +200,7 @@ export const Header: React.FC<HeaderProps> = ({
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-base text-[#1C2733] font-medium py-2.5 hover:text-[#668261] transition-colors"
+                className="text-[17.6px] text-[#373737] font-medium py-2.5 hover:text-[#668261] transition-colors"
               >
                 {link.name}
               </a>
