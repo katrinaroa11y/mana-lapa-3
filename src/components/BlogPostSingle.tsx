@@ -105,7 +105,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
         >
           <img
             src={post.featuredImage}
-            alt={post.title}
+            alt={post.featuredImageAlt || post.title}
             loading="eager"
             decoding="async"
             className="block w-full h-[280px] sm:h-[420px] object-cover object-center"
@@ -166,7 +166,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
           <div className="mt-12 pt-8 border-t border-[#E3DDD3] flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left bg-[#FAF8F5] p-6 sm:p-7 rounded-sm border border-[#E3DDD3]">
             <img
               src={katrinaPortrait}
-              alt={post.author}
+              alt="Klīniskā psiholoģe Rīgā Katrīna Rozenbaha sēž krēslā ar atvērtu pierakstu blociņu"
               loading="lazy"
               decoding="async"
               className="w-16 h-16 rounded-sm object-cover border border-[#D1C9BC] shadow-xs shrink-0"

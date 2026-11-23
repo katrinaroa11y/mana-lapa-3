@@ -60,7 +60,7 @@ export const AboutSection: React.FC = () => {
                   src={sessionNotesImg}
                   srcSet={`${sessionNotesJpg480} 480w, ${sessionNotesImg} 1200w`}
                   sizes="(max-width: 1280px) 420px, 460px"
-                  alt="Psiholoģe veic pierakstus individuālās konsultācijas laikā, fonā klients"
+                  alt="Četri cilvēki sarkanā laivā mierīgā ezerā pie meža un miglainu kalnu pakājes"
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
@@ -91,13 +91,34 @@ export const AboutSection: React.FC = () => {
               Sveiks,
             </h2>
 
-            {/* Formatted Paragraphs with equal font size across all paragraphs, justified alignment */}
-            <div className="space-y-6 text-lg sm:text-xl leading-relaxed text-[#455260] font-normal text-justify">
+            {/* Formatted Paragraphs with 7% smaller font size on mobile, justified alignment */}
+            <div className="space-y-6 text-[16.7px] sm:text-xl leading-relaxed text-[#455260] font-normal text-justify">
               {paragraphs.map((para, idx) => (
-                <p key={idx} className="text-lg sm:text-xl leading-relaxed text-[#455260] font-normal text-justify">
+                <p key={idx} className="text-[16.7px] sm:text-xl leading-relaxed text-[#455260] font-normal text-justify">
                   {renderFormattedText(para)}
                 </p>
               ))}
+            </div>
+
+            {/* Mobile/Tablet narrow (~2 cm) horizontal image strip below the text */}
+            <div className="lg:hidden mt-8 relative w-full h-[76px] sm:h-[96px] rounded-sm overflow-hidden shadow-[0_4px_24px_-4px_rgba(28,39,51,0.08)] bg-[#F4EFEA]">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${sessionNotesWebp480} 480w, ${sessionNotesWebp800} 800w, ${sessionNotesWebp1200} 1200w`}
+                  sizes="(max-width: 1024px) 100vw, 460px"
+                />
+                <img
+                  src={sessionNotesImg}
+                  srcSet={`${sessionNotesJpg480} 480w, ${sessionNotesImg} 1200w`}
+                  sizes="(max-width: 1024px) 100vw, 460px"
+                  alt="Četri cilvēki nelielā sarkanā laivā uz mierīga ezera ūdens"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-[center_94%]"
+                />
+              </picture>
             </div>
           </motion.div>
 

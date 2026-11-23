@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Menu, X } from 'lucide-react';
+import { Calendar, Menu, X, Sparkles } from 'lucide-react';
 import { PRACTICE_INFO } from '../data/practiceData';
 
 interface HeaderProps {
   onOpenBooking: (serviceId?: string) => void;
   onNavigateHome?: (sectionId?: string) => void;
   onNavigateBlogs?: () => void;
+  onNavigateContacts?: () => void;
+  onNavigatePost?: (slug: string) => void;
   currentPath?: string;
   language?: string;
 }
@@ -14,6 +16,8 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenBooking,
   onNavigateHome,
   onNavigateBlogs,
+  onNavigateContacts,
+  onNavigatePost,
   currentPath = '/'
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
     { name: 'Izglītība', href: '#izglitiba' },
     { name: 'Blogs', href: '/blogs' },
     { name: 'BUJ', href: '#buj' },
-    { name: 'Kontakti', href: '#kontakti' },
+    { name: 'Kontakti', href: '/kontakti' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -51,6 +55,16 @@ export const Header: React.FC<HeaderProps> = ({
         onNavigateBlogs();
       } else {
         window.history.pushState({}, '', '/blogs');
+        window.dispatchEvent(new Event('popstate'));
+      }
+      return;
+    }
+
+    if (href === '/kontakti') {
+      if (onNavigateContacts) {
+        onNavigateContacts();
+      } else {
+        window.history.pushState({}, '', '/kontakti');
         window.dispatchEvent(new Event('popstate'));
       }
       return;
@@ -85,12 +99,24 @@ export const Header: React.FC<HeaderProps> = ({
     }
   };
 
+  const handleMeistarklaseClick = () => {
+    setMobileMenuOpen(false);
+    const slug = 'vision-board-meistarklase-2027';
+    if (onNavigatePost) {
+      onNavigatePost(slug);
+    } else {
+      window.history.pushState({}, '', `/blogs/${slug}`);
+      window.dispatchEvent(new Event('popstate'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#FAF8F5]/95 backdrop-blur-sm border-b border-[#E3DDD3] py-3.5 shadow-[0_1px_0_0_rgba(0,0,0,0.02)]'
-          : 'bg-[#FAF8F5]/80 backdrop-blur-xs border-b border-[#E3DDD3]/60 py-4 sm:py-5'
+          ? 'bg-[#FAF8F5]/95 backdrop-blur-sm border-b border-[#E3DDD3] py-2.5 shadow-[0_1px_0_0_rgba(0,0,0,0.02)]'
+          : 'bg-[#FAF8F5]/80 backdrop-blur-xs border-b border-[#E3DDD3]/60 py-3 sm:py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -132,15 +158,25 @@ export const Header: React.FC<HeaderProps> = ({
           ))}
         </nav>
 
-        {/* Action Button & Mobile Menu Toggle */}
+        {/* Action Buttons & Mobile Menu Toggle */}
         <div className="flex items-center space-x-3">
-          <button
-            onClick={() => onOpenBooking()}
-            className="hidden sm:inline-flex items-center space-x-2 bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] py-2.5 px-5 rounded-md text-xs sm:text-sm font-medium tracking-wide transition-all cursor-pointer border border-[#e08e69] hover:border-[#cb7c57] shadow-xs"
-          >
-            <Calendar className="w-3.5 h-3.5" />
-            <span>Pieteikties</span>
-          </button>
+          <div className="hidden sm:flex flex-col gap-1.5">
+            <button
+              onClick={() => onOpenBooking()}
+              className="w-full inline-flex items-center justify-center space-x-2 bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] py-2.5 px-5 rounded-md text-xs sm:text-sm font-medium tracking-wide transition-all cursor-pointer border border-[#e08e69] hover:border-[#cb7c57] shadow-xs whitespace-nowrap"
+            >
+              <Calendar className="w-3.5 h-3.5 shrink-0" />
+              <span>Pieteikties</span>
+            </button>
+
+            <button
+              onClick={handleMeistarklaseClick}
+              className="w-full inline-flex items-center justify-center space-x-2 bg-[#668261] hover:bg-[#546E50] text-[#FAF8F5] py-2.5 px-5 rounded-md text-xs sm:text-sm font-medium tracking-wide transition-all cursor-pointer border border-[#668261] hover:border-[#546E50] shadow-xs whitespace-nowrap"
+            >
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span>Meistarklase 2027</span>
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -168,16 +204,24 @@ export const Header: React.FC<HeaderProps> = ({
               </a>
             ))}
           </nav>
-          <div className="pt-2">
+          <div className="pt-2 space-y-2.5">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full inline-flex items-center justify-center space-x-2 bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] py-3 rounded-md text-sm font-medium tracking-wide transition-all border border-[#e08e69]"
+              className="w-full inline-flex items-center justify-center space-x-2 bg-[#e08e69] hover:bg-[#cb7c57] text-[#FAF8F5] py-3 rounded-md text-sm font-medium tracking-wide transition-all border border-[#e08e69] cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Pieteikties konsultācijai</span>
+            </button>
+
+            <button
+              onClick={handleMeistarklaseClick}
+              className="w-full inline-flex items-center justify-center space-x-2 bg-[#668261] hover:bg-[#546E50] text-[#FAF8F5] py-3 rounded-md text-sm font-medium tracking-wide transition-all border border-[#668261] hover:border-[#546E50] cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Meistarklase 2027</span>
             </button>
           </div>
         </div>

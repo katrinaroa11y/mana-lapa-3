@@ -30,11 +30,11 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
             <span className="w-6 h-px bg-[#668261]" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18] mb-5">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18] sm:mb-5">
           Jautājumi un atbildes
           </h2>
 
-          <p className="text-base sm:text-lg text-[#455260] leading-relaxed">
+          <p className="hidden sm:block text-base sm:text-lg text-[#455260] leading-relaxed">
             Atbildes uz biežāk uzdotajiem jautājumiem par konsultāciju gaitu,
             formu, apmaksu un konfidencialitāti.
           </p>
@@ -89,8 +89,8 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
           })}
         </div>
 
-        {/* Additional Help Callout */}
-        <div className="mt-14 p-7 sm:p-8 rounded-sm bg-[#FAF8F5] border border-[#E3DDD3] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)]">
+        {/* Additional Help Callout - hidden on mobile phone view */}
+        <div className="hidden sm:flex mt-14 p-7 sm:p-8 rounded-sm bg-[#FAF8F5] border border-[#E3DDD3] sm:flex-row items-center justify-between gap-6 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)]">
 
           <div className="text-center sm:text-left">
             <h4 className="font-serif text-lg font-bold text-[#1C2733] mb-1">

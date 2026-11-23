@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src="/calming_hero_bg_1785157949576.jpg"
-          alt="Mierīgs un atbalstošs fons"
+          alt=""
           loading="lazy"
           decoding="async"
           referrerPolicy="no-referrer"
@@ -58,10 +58,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center space-x-3 mb-6"
+              className="flex items-center justify-center sm:justify-start sm:space-x-3 mb-6"
             >
-              <span className="w-8 h-px bg-[#668261]" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#668261]">
+              <span className="hidden sm:block w-8 h-px bg-[#668261]" />
+              <span className="text-[9.5px] sm:text-xs font-semibold uppercase tracking-[0.07em] sm:tracking-[0.2em] text-[#668261] text-center sm:text-left whitespace-nowrap">
                 Shēmu terapija | EMDR | Klīniskā psiholoģija
               </span>
             </motion.div>
@@ -86,7 +86,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.7, delay: 0.16 }}
               className="text-base sm:text-lg text-[#455260] font-normal max-w-xl leading-relaxed mb-9 text-justify"
             >
-              Klīniskās psiholoģes konsultācijas trauksmes, stresa, depresijas, izdegšanas, attiecību problēmu un citu emocionālu grūtību risināšanai. Konsultācijas attālināti visā Latvijā.
+              Klīniskās psiholoģes konsultācijas trauksmes, stresa, depresijas, izdegšanas, attiecību problēmu un citu emocionālu grūtību risināšanai. Konsultācijas attālināti visā Latvijā un klātienē Rīgā.
             </motion.p>
 
             {/* Action Buttons */}
@@ -141,7 +141,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                       src={portraitSrc}
                       srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.jpg 480w, /psihologe-riga-katrina-rozenbaha-prakse-800.jpg 800w, /psihologe-riga-katrina-rozenbaha-prakse.jpg 1024w"
                       sizes="(max-width: 640px) 384px, (max-width: 1024px) 448px, 448px"
-                      alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                      alt="Klīniskā psiholoģe Rīgā Katrīna Rozenbaha sēž krēslā ar atvērtu pierakstu blociņu"
                       fetchPriority="high"
                       loading="eager"
                       decoding="async"
@@ -152,7 +152,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 ) : (
                   <img
                     src={portraitSrc}
-                    alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                    alt="Klīniskā psiholoģe Rīgā Katrīna Rozenbaha sēž krēslā ar atvērtu pierakstu blociņu"
                     fetchPriority="high"
                     loading="eager"
                     decoding="async"
@@ -163,19 +163,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
             </motion.div>
 
-            {/* Key Trust Highlights - Hidden on mobile phone view, visible on sm and above */}
+            {/* Key Trust Highlights - Visible across mobile and desktop */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.32 }}
-              className="hidden sm:flex sm:pt-4 flex-col sm:flex-row items-start gap-6 sm:gap-10 lg:gap-14"
+              className="flex sm:pt-4 flex-col sm:flex-row items-start gap-5 sm:gap-10 lg:gap-14"
             >
               <div className="flex items-start space-x-3">
                 <LockKeyhole
                   className="w-4 h-4 text-[#556B51] shrink-0 mt-0.5"
-                  strokeWidth={1.35}
+                  strokeWidth={1.5}
                 />
-                <span className="text-xs sm:text-sm text-[#3A4753] font-medium leading-tight pt-0.5">
+                <span className="text-xs sm:text-sm text-[#1C2733] font-bold leading-tight pt-0.5">
                   Konfidencialitāte
                 </span>
               </div>
@@ -183,13 +183,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               <div className="flex items-start space-x-3">
                 <ScrollText
                   className="w-4 h-4 text-[#556B51] shrink-0 mt-0.5"
-                  strokeWidth={1.35}
+                  strokeWidth={1.5}
                 />
                 <div className="flex flex-col">
-                  <span className="text-xs sm:text-sm text-[#3A4753] font-medium leading-tight pt-0.5">
+                  <span className="text-xs sm:text-sm text-[#1C2733] font-bold leading-tight pt-0.5">
                     Reģistrēta klīniskā psiholoģe
                   </span>
-                  <span className="text-[11px] sm:text-xs text-[#6E7D8C] font-mono leading-tight mt-1">
+                  <span className="text-xs sm:text-sm text-[#455260] font-normal leading-tight mt-1">
                     Psihologu reģistra Nr. 7001430
                   </span>
                 </div>
@@ -198,9 +198,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               <div className="flex items-start space-x-3">
                 <Fingerprint
                   className="w-4 h-4 text-[#556B51] shrink-0 mt-0.5"
-                  strokeWidth={1.35}
+                  strokeWidth={1.5}
                 />
-                <span className="text-xs sm:text-sm text-[#3A4753] font-medium leading-tight pt-0.5">
+                <span className="text-xs sm:text-sm text-[#1C2733] font-bold leading-tight pt-0.5">
                   Individuāla pieeja
                 </span>
               </div>
@@ -228,7 +228,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                       src={portraitSrc}
                       srcSet="/psihologe-riga-katrina-rozenbaha-prakse-480.jpg 480w, /psihologe-riga-katrina-rozenbaha-prakse-800.jpg 800w, /psihologe-riga-katrina-rozenbaha-prakse.jpg 1024w"
                       sizes="(max-width: 1280px) 384px, 448px"
-                      alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                      alt="Klīniskā psiholoģe Rīgā Katrīna Rozenbaha sēž krēslā ar atvērtu pierakstu blociņu"
                       fetchPriority="high"
                       loading="eager"
                       decoding="async"
@@ -239,7 +239,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 ) : (
                   <img
                     src={portraitSrc}
-                    alt="Katrīna Rozenbaha, reģistrēta klīniskā psiholoģe"
+                    alt="Klīniskā psiholoģe Rīgā Katrīna Rozenbaha sēž krēslā ar atvērtu pierakstu blociņu"
                     fetchPriority="high"
                     loading="eager"
                     decoding="async"

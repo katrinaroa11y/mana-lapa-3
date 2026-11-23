@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { SERVICES } from '../data/practiceData';
-import { Clock, MapPin, Check, Calendar } from 'lucide-react';
+import { Clock, MapPin, Banknote, Check, Calendar } from 'lucide-react';
 import { renderFormattedText } from '../utils/formatText';
 
 interface ServicesSectionProps {
@@ -13,7 +13,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 }) => {
   return (
     <section id="pakalpojumi" className="py-24 sm:py-32 bg-[#FFFFFF] border-b border-[#E3DDD3]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="max-w-3xl mb-16 sm:mb-20">
@@ -30,7 +30,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         </div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 xl:gap-6">
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.id}
@@ -41,61 +41,52 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 duration: 0.6,
                 delay: index * 0.12,
               }}
-              className="relative rounded-sm flex flex-col justify-between transition-all duration-300 bg-[#FAF8F5] border border-[#E3DDD3] p-7 sm:p-8 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] hover:border-[#1C2733]/40 hover:shadow-[0_6px_20px_-4px_rgba(28,39,51,0.08)]"
+              className="relative rounded-sm flex flex-col justify-between transition-all duration-300 bg-[#FAF8F5] border border-[#E3DDD3] px-6 pb-6 pt-7 lg:px-5 lg:pb-6 lg:pt-7 xl:px-6 xl:pb-7 xl:pt-8 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] hover:border-[#1C2733]/40 hover:shadow-[0_6px_20px_-4px_rgba(28,39,51,0.08)]"
             >
               <div>
-                {/* Top Badge & Price */}
-                <div className="h-8 mb-5 flex justify-between items-center gap-2">
-                  <span className="inline-block px-2.5 py-1 rounded-sm text-[11px] font-mono uppercase tracking-wider bg-[#FFFFFF] text-[#668261] border border-[#D1C9BC]">
-                    {service.tag}
-                  </span>
-
-                  {service.price && (
-                    <span className="text-xl font-serif text-[#1C2733] font-bold">
-                      {service.price}
-                    </span>
-                  )}
-                </div>
-
-                {/* Service Title & Subtitle - fixed unified height so duration & format block top edge aligns across all columns */}
-                <div className="min-h-[105px] md:h-[160px] lg:h-[145px] xl:h-[135px] flex flex-col justify-start mb-5">
-                  <h3 className="font-serif text-2xl font-semibold text-[#1C2733] mb-2 leading-snug text-center">
+                {/* Service Title - 7% larger, single line, top-aligned with increased spacing below */}
+                <div className="lg:h-[38px] xl:h-[44px] 2xl:h-[46px] flex items-start justify-center mb-7">
+                  <h3 className="font-serif text-[22px] sm:text-[32px] lg:text-[21.5px] xl:text-[26px] 2xl:text-[28px] sm:whitespace-nowrap font-semibold text-[#1C2733] leading-snug text-center">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#6E7D8C] leading-relaxed text-justify">
-                    {service.subtitle}
-                  </p>
                 </div>
 
-                {/* Duration & Format - unified height and matching body font */}
-                <div className="h-[80px] flex flex-col justify-center space-y-2 mb-6 text-xs sm:text-sm text-[#3A4753] bg-[#FFFFFF] p-3.5 rounded-sm border border-[#E3DDD3]">
+                {/* Duration, Format & Price - matching TopicsSection light gray label size and color */}
+                <div className="lg:min-h-[112px] flex flex-col justify-start space-y-2 mb-6 text-sm text-[#6E7D8C] font-normal bg-[#FFFFFF] p-4 rounded-sm border border-[#E3DDD3]">
                   <div className="flex items-center space-x-2.5">
                     <Clock className="w-4 h-4 text-[#668261] shrink-0" />
-                    <span className="leading-none">{service.duration}</span>
+                    <span className="leading-snug">{service.duration}</span>
                   </div>
 
                   <div className="flex items-center space-x-2.5">
                     <MapPin className="w-4 h-4 text-[#668261] shrink-0" />
-                    <span className="leading-none">{service.format}</span>
+                    <span className="leading-snug">{service.format}</span>
                   </div>
+
+                  {service.price && (
+                    <div className="flex items-center space-x-2.5">
+                      <Banknote className="w-4 h-4 text-[#668261] shrink-0" />
+                      <span className="leading-snug">{service.price}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Description (if present) */}
                 {service.description && (
-                  <p className="text-sm text-[#455260] mb-5 leading-relaxed">
+                  <p className="text-base sm:text-lg text-[#1C2733] mb-5 leading-relaxed text-justify">
                     {renderFormattedText(service.description)}
                   </p>
                 )}
 
-                {/* Benefits - divider line removed as requested */}
-                <div className="space-y-2.5 mb-8">
+                {/* Benefits */}
+                <div className="space-y-3.5 mb-8">
                   {service.benefits.map((benefit, bIdx) => (
                     <div
                       key={bIdx}
-                      className="flex items-start space-x-2.5 text-xs sm:text-sm text-[#3A4753]"
+                      className="flex items-start space-x-3 text-base sm:text-lg text-[#1C2733]"
                     >
-                      <Check className="w-4 h-4 text-[#668261] shrink-0 mt-0.5" />
-                      <span>{benefit}</span>
+                      <Check className="w-5 h-5 text-[#668261] shrink-0 mt-0.5" />
+                      <span className="leading-snug">{benefit}</span>
                     </div>
                   ))}
                 </div>

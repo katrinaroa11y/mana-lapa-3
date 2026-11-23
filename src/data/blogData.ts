@@ -9,6 +9,7 @@ export interface BlogPost {
   category: string;
   excerpt: string;
   featuredImage: string;
+  featuredImageAlt: string;
   content: {
     intro: string;
     sections: {
@@ -33,6 +34,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Meistarklase & Pašizziņa',
     excerpt: 'Vision board un pašizziņas meistarklase Rīgā | 9. janvāris | 2027. Aicinu Tevi pievienoties psihologu vadītā meistarklasē Rīgā, kur psiholoģijas zinātne satiekas ar pašizziņu.',
     featuredImage: '/5739029c773ea7f817c2ac19fafdccd9.jpg',
+    featuredImageAlt: 'Cilvēki pie koka galda griež žurnālu attēlus un veido vision board kolāžu',
     content: {
       intro: 'Vision board un pašizziņas meistarklase Rīgā | 9. janvāris | 2027\nAicinu Tevi pievienoties psihologu vadītā meistarklasē Rīgā, kur psiholoģijas zinātne satiekas ar pašizziņu un sāc jauno gadu ar mieru un pārliecību.',
       sections: [
@@ -85,8 +87,8 @@ Vai arī šeit:
 <b>Ja meistarklasi dāvināsi un attiecīgi vēlies tai skaistu noformējumu, raksti man uz e-pastu vai WhatsApp (skatīt <a href="/#kontakti" data-navigate-section="kontakti" class="underline text-[#668261] font-medium hover:text-[#4F684B]">Kontakti</a> sadaļu).</b>`
         },
         {
-          heading: 'Kas vada meistarklasi?',
-          body: `Meistarklasi vada psiholoģes <b>Katrīna Rozenbaha</b> un <b>Elza Krasta</b>. Viņas apvieno praktiski pielietojamas psiholoģijas zināšanas ar empātisku pieeju, lai ikvienam dalībniekam būtu droši un ērti iepazīt sevi.
+          heading: 'Kas vadīs meistarklasi?',
+          body: `Meistarklasi vadīsim mēs, psiholoģes <b>Katrīna Rozenbaha</b> un <b>Elza Krasta</b>. Apvienosim praktiski pielietojamas psiholoģijas zināšanas ar radošu pieeju un empātisku klātbūtni, lai ikvienam dalībniekam sevis iepazīšanas process būtu drošs un ērts.
 
 <b>Katrīna Rozenbaha</b> – klīniskā un veselības psiholoģe ar maģistra grādu psiholoģijā. Savā privātpraksē strādā ar EMDR un shēmu terapijas metodēm, palīdzot cilvēkiem pārvarēt trauksmi, attiecību grūtības, izdegšanu un stiprināt iekšējos resursus.
 
@@ -113,6 +115,7 @@ Vai arī šeit:
     category: 'EMDR & Traumu terapija',
     excerpt: 'EMDR jeb desensibilizācija un pārstrāde ar acu kustībām ir viena no zinātniski visvairāk pētītajām un efektivākajām metodēm traumu un trauksmes mazināšanā.',
     featuredImage: '/blog_emdr_therapy.jpg',
+    featuredImageAlt: 'Tuvplānā redzama cilvēka gaiši zila acs ar skatienu uz augšu un sāniem',
     content: {
       intro: `Daudzi cilvēki gadiem ilgi nes smagu pagātnes notikumu un hroniskas trauksmes nastu, nemaz neapzinoties, ka smadzenes ir ‘’iestrēgušas’’ traumas brīdī. EMDR (Eye Movement Desensitization and Reprocessing) jeb ackustību desensibilizācijas un atkārtotas apstrādes terapija nodrošina strukturētu pieeju, kas palīdz smadzenēm dabiski pārstrādāt traumatiskās atmiņas.`,
       sections: [
@@ -156,6 +159,7 @@ body: 'Pirmajās sesijās psihologs uzmanīgi izvērtē klienta grūtības un si
     category: 'Stresa vadība & Izdegšana',
     excerpt: 'Izdegšana nenotiek vienā dienā. Tā ir pakāpeniska emocionāla un fiziska spēku izsīkšana. Uzziniet galvenos signālus un praksē pārbaudītus soļus, lai atlabtu.',
     featuredImage: '/blog_burnout_prevention.jpg',
+    featuredImageAlt: 'Nogurusi sieviete pie atvērta portatīvā datora atbalsta galvu pret roku',
     content: {
       intro: 'Vai man ir izdegšana? Bieži ar šo jautājumu savā praksē saskaras psihologi un psihoterapeiti. Mūsdienu steidzīgajā ritmā liels darba apjoms un nemitīgs spiediens bieži tiek uztverts kā norma. Tomēr, kad hronisks stress paliek nepamanīts, organisms sāk sūtīt nopietnus trauksmes signālus. Ja trauksmes signāli tiek ignorēti, var sākties izdegšanas sindroms jeb visaptverošs fizisko, garīgo un psiholoģisko spēku izsīkuma stāvoklis. Izdegšanas agrīno pazīmju atpazīšana un profilakse ir atslēga uz ilgtspējīgu dzīves un darba sparu.',
       sections: [
@@ -207,6 +211,7 @@ body: 'Pirmajās sesijās psihologs uzmanīgi izvērtē klienta grūtības un si
     category: 'Shēmu terapija',
     excerpt: 'Vai kādreiz esi pamanījis, ka atkal un atkal nonāc līdzīgās konfliktsituācijās vai izvēlies līdzīgus partnerus? Shēmu terapija palīdz izprast šos neapzinātos uzvedības modeļus.',
     featuredImage: '/blog_schema_therapy_and_relationship_advice.jpg',
+    featuredImageAlt: 'Iebraukta taka rudens pļavā ved pretī dzeltējošam kokam un meža malai',
     content: {
       intro: 'Shēmu terapija ir psihoterapijas pieeja. Tā ir īpaši izstrādāta, lai strādātu ar dziļi iesakņotiem un traucējošiem uzvedības modeļiem.',
       sections: [

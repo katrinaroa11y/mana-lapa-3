@@ -60,7 +60,7 @@ export const ApproachSection: React.FC = () => {
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18] mb-6">
               Metodes
             </h2>
-            <p className="text-base sm:text-lg text-[#455260] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#1C2733] leading-relaxed">
               Konsultēšanas procesā katram individuāli tiek piemērotas atbilstošākās metodes, tās saskaņojot ar klienta vēlmēm un vajadzībām.
             </p>
           </div>
@@ -102,7 +102,7 @@ export const ApproachSection: React.FC = () => {
 
                     {/* Method description: unified fixed height on desktop so video buttons align on exact same top edge */}
                     <div
-                      className="text-base text-[#455260] leading-relaxed whitespace-pre-line space-y-2 font-normal text-justify lg:h-[240px] xl:h-[190px] flex flex-col justify-start"
+                      className="text-base text-[#1C2733] leading-relaxed whitespace-pre-line space-y-2 font-normal text-justify lg:h-[240px] xl:h-[190px] flex flex-col justify-start"
                       style={{ textAlign: 'justify' }}
                     >
                       {renderFormattedText(method.description)}

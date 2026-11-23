@@ -45,10 +45,7 @@ export const TopicsSection: React.FC = () => {
           >
             <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-mono text-[#6E7D8C] tracking-widest uppercase">
-                    Tēmu loks
-                  </span>
+                <div className="flex items-center justify-end mb-4">
                   <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     1
                   </span>
@@ -98,7 +95,7 @@ export const TopicsSection: React.FC = () => {
                   src={calmSunlightWallImg}
                   srcSet={`${calmSunlightWallJpg480} 480w, ${calmSunlightWallImg} 1200w`}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
-                  alt="Mierīga, klusa telpa ar saules gaismu un maigām ēnām"
+                  alt="Cilvēks tumšā mētelī stāv uz klinšaina krasta pie bangojošiem viļņiem"
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
@@ -121,10 +118,7 @@ export const TopicsSection: React.FC = () => {
               className="md:col-span-5 bg-[#FFFFFF] border border-[#E3DDD3] rounded-sm p-8 sm:p-10 flex flex-col justify-between shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)] hover:border-[#1C2733]/30 transition-all duration-300"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-mono text-[#6E7D8C] tracking-widest uppercase">
-                    Tēmu loks
-                  </span>
+                <div className="flex items-center justify-end mb-4">
                   <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     2
                   </span>
@@ -164,10 +158,7 @@ export const TopicsSection: React.FC = () => {
               className="md:col-span-7 bg-[#F4EFEA] border border-[#DDD5C7] rounded-sm p-8 sm:p-10 flex flex-col justify-between shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)] hover:border-[#1C2733]/30 transition-all duration-300"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-mono text-[#7D7365] tracking-widest uppercase">
-                    Tēmu loks
-                  </span>
+                <div className="flex items-center justify-end mb-4">
                   <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     3
                   </span>
@@ -210,10 +201,7 @@ export const TopicsSection: React.FC = () => {
           >
             <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-mono text-[#6E7D8C] tracking-widest uppercase">
-                    Tēmu loks
-                  </span>
+                <div className="flex items-center justify-end mb-4">
                   <span className="text-base font-mono text-[#668261] font-medium tracking-wider">
                     4
                   </span>
@@ -248,7 +236,7 @@ export const TopicsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative h-[180px] sm:h-auto sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
+            <div className="lg:col-span-5 relative h-[220px] sm:h-auto sm:min-h-[320px] lg:min-h-full bg-[#F4EFEA]">
               <picture>
                 <source
                   type="image/webp"
@@ -259,7 +247,7 @@ export const TopicsSection: React.FC = () => {
                   src={mindfulPathNatureImg}
                   srcSet={`${mindfulPathNatureJpg480} 480w, ${mindfulPathNatureImg} 1200w`}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
-                  alt="Cilvēks dabā mierīgā ceļā uz dabisku apvārsni"
+                  alt="Automašīnas sānu spogulī atspīd taisns ceļš pretī sniegotiem kalniem"
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"

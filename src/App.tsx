@@ -62,6 +62,7 @@ export default function App() {
   const isBlogsPage = currentPath === '/blogs' || currentPath === '/blogs/';
   const isSinglePostPage = currentPath.startsWith('/blogs/') && currentPath.length > 7;
   const singlePostSlug = isSinglePostPage ? currentPath.replace('/blogs/', '') : '';
+  const isContactsPage = currentPath === '/kontakti' || currentPath === '/kontakti/';
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#455260] font-sans antialiased selection:bg-[#668261] selection:text-[#FAF8F5] flex flex-col">
@@ -70,6 +71,8 @@ export default function App() {
         onOpenBooking={handleOpenBooking}
         onNavigateHome={handleNavigateHome}
         onNavigateBlogs={() => navigate('/blogs')}
+        onNavigateContacts={() => navigate('/kontakti')}
+        onNavigatePost={(slug) => navigate(`/blogs/${slug}`)}
         currentPath={currentPath}
         language="lv"
       />
@@ -91,6 +94,9 @@ export default function App() {
             onOpenBooking={() => handleOpenBooking()}
             isPage={true}
           />
+        ) : isContactsPage ? (
+          /* Dedicated Contacts Page (/kontakti) */
+          <ContactSection isPage={true} />
         ) : (
           /* Main Homepage View */
           <>
@@ -100,38 +106,7 @@ export default function App() {
             <TopicsSection />
             <ApproachSection />
 
-            {/* Integrated Blog Section on Homepage */}
-            <section id="blogs" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-t border-[#E3DDD3]">
-              <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-                  <div>
-                    <div className="flex items-center space-x-3 mb-4">
-                      <span className="w-8 h-px bg-[#668261]" />
-                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#668261]">
-                        Jaunākie Raksti
-                      </span>
-                    </div>
-                    <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18]">
-                      Psiholoģijas blogs
-                    </h2>
-                  </div>
-                  <button
-                    onClick={() => navigate('/blogs')}
-                    className="inline-flex items-center space-x-2 text-sm font-medium text-[#1C2733] hover:text-[#668261] transition-colors cursor-pointer pb-1 border-b border-[#D1C9BC] hover:border-[#668261] w-fit"
-                  >
-                    <span>Apskatīt visus rakstus &rarr;</span>
-                  </button>
-                </div>
-
-                {/* 3 Articles in 1 Row */}
-                <BlogList
-                  onSelectPost={(slug) => navigate(`/blogs/${slug}`)}
-                  isPage={false}
-                />
-              </div>
-            </section>
-
-            {/* BUJ (FaqSection) placed under Blog section */}
+            {/* BUJ (FaqSection) */}
             <FaqSection onOpenBooking={() => handleOpenBooking()} />
 
             <ContactSection />

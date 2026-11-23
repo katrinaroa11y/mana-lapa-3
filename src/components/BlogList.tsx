@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { BLOG_POSTS, BlogPost } from '../data/blogData';
-import { User, Calendar, ArrowRight, BookOpen } from 'lucide-react';
+import { User, Calendar, ArrowRight } from 'lucide-react';
 
 interface BlogListProps {
   onSelectPost: (slug: string) => void;
@@ -25,11 +25,6 @@ export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true 
         {/* Header section (only on full page) */}
         {isPage && (
           <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20 space-y-4">
-            <div className="inline-flex items-center justify-center space-x-2 text-xs uppercase tracking-[0.2em] text-[#668261] font-semibold">
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Psiholoģijas Blogs & Raksti</span>
-            </div>
-
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C2733] font-semibold leading-[1.18]">
               Katrīna raksta
             </h1>
@@ -55,7 +50,7 @@ export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true 
               <div className="relative aspect-[4/3] overflow-hidden bg-[#F4EFEA] shrink-0 border-b border-[#E3DDD3]">
                 <img
                   src={post.featuredImage}
-                  alt={post.title}
+                  alt={post.featuredImageAlt || post.title}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"

@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { PRACTICE_INFO } from '../data/practiceData';
 import { Mail, Phone, Send, CheckCircle2, Instagram, Shield, Loader2, AlertCircle } from 'lucide-react';
 
-export const ContactSection: React.FC = () => {
+interface ContactSectionProps {
+  isPage?: boolean;
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({ isPage = false }) => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -57,25 +61,38 @@ export const ContactSection: React.FC = () => {
     }
   };
 
+  const HeadingTag = isPage ? 'h1' : 'h2';
+
   return (
-    <section id="kontakti" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] relative border-b border-[#E3DDD3]">
+    <section
+      id="kontakti"
+      className={`${
+        isPage
+          ? 'pt-28 pb-20 lg:pt-36 lg:pb-28 min-h-screen'
+          : 'py-24 sm:py-32'
+      } px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] relative border-b border-[#E3DDD3]`}
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header */}
         <div className="max-w-5xl mb-16 sm:mb-20">
-          <div className="flex items-center space-x-3 mb-4">
-            <span className="w-8 h-px bg-[#668261]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#668261]">
-              Saziņa & Lokācija
-            </span>
-          </div>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] text-[#1C2733] font-semibold leading-[1.25] mb-5">
+          {!isPage && (
+            <div className="flex items-center space-x-3 mb-4">
+              <span className="w-8 h-px bg-[#668261]" />
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#668261]">
+                Saziņa & Lokācija
+              </span>
+            </div>
+          )}
+          <HeadingTag className={`font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] text-[#1C2733] font-semibold leading-[1.25] ${isPage ? 'mb-5' : ''}`}>
             <span>Sazinies ar mani e-pastā vai telefoniski,</span>
             <span className="block mt-1 sm:mt-2">lai uzzinātu vairāk</span>
-          </h2>
-          <p className="text-base sm:text-lg text-[#455260] leading-relaxed max-w-3xl">
-            Droši sazinieties, lai noskaidrotu sev interesējošās nianses vai vienotos par tikšanās laiku.
-          </p>
+          </HeadingTag>
+          {isPage && (
+            <p className="text-base sm:text-lg text-[#455260] leading-relaxed max-w-3xl">
+              Raksti, lai noskaidrotu sev interesējošās nianses vai vienotos par tikšanās laiku klātienē Rīgas centrā vai tiešsaistē (online).
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 items-start">

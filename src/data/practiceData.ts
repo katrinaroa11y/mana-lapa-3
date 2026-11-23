@@ -18,10 +18,10 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'individuala-terapija',
     title: 'Individuālas konsultācijas',
-    subtitle: 'Atbalsts emocionālajai labsajūtai, sevis izpratnei un personīgo mērķu sasniegšanai. Iespēja kombinēt individuālas konsultācijas ar EMDR un shēmu terapijas metodēm',
+    subtitle: '',
     tag: 'Tiešsaistē',
     duration: '50 minūtes',
-    format: 'Tiešsaistē',
+    format: 'Tiešsaistē un klātienē',
     benefits: [
       'Pašvērtējuma un robežu stiprināšana',
       'Izdegšanas un trauksmes mazināšana',
@@ -34,10 +34,10 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'traumas-terapija-emdr',
     title: 'EMDR terapijas metode',
-    subtitle: 'Uz pierādījumiem balstīta metode grūtu un traumatisku pieredžu apstrādei',
+    subtitle: '',
     tag: 'Tiešsaistē',
     duration: '60 minūtes',
-    format: 'Tiešsaistē',
+    format: 'Tiešsaistē un klātienē',
     benefits: [
       'Novērsti vai mazināti traumatiskās pieredzes simptomi',
       'Trauksmes un nomāktības intensitātes samazināšanās un vairāk miera ikdienā',
@@ -50,7 +50,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'nodarbibas-un-lekcijas',
     title: 'Organizācijām',
-    subtitle: 'Darbsemināri, lekcijas un komandas saliedēšanas pasākumi',
+    subtitle: '',
     tag: 'Tiešsaistē un klātienē',
     duration: 'Pēc vienošanās',
     format: 'Tiešsaistē un klātienē',
