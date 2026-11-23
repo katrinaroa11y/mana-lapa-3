@@ -1,6 +1,8 @@
 import React from 'react';
-import { PRACTICE_INFO } from '../data/practiceData';
-import { ShieldCheck, ArrowUp, Instagram } from 'lucide-react';
+import { PRACTICE_INFO } from '../data/practiceInfo';
+import ShieldCheck from 'lucide-react/dist/esm/icons/shield-check';
+import ArrowUp from 'lucide-react/dist/esm/icons/arrow-up';
+import Instagram from 'lucide-react/dist/esm/icons/instagram';
 
 interface FooterProps {
   onOpenPrivacy: () => void;

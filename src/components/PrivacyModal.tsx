@@ -1,7 +1,9 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, ShieldCheck, Lock, FileText } from 'lucide-react';
-import { PRACTICE_INFO } from '../data/practiceData';
+import X from 'lucide-react/dist/esm/icons/x';
+import ShieldCheck from 'lucide-react/dist/esm/icons/shield-check';
+import Lock from 'lucide-react/dist/esm/icons/lock';
+import FileText from 'lucide-react/dist/esm/icons/file-text';
+import { PRACTICE_INFO } from '../data/practiceInfo';
 
 interface PrivacyModalProps {
   isOpen: boolean;
@@ -12,25 +14,15 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
   if (!isOpen) return null;
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-        {/* Backdrop */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 bg-[#1C2733]/60 backdrop-blur-xs"
-        />
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      {/* Backdrop */}
+      <div
+        onClick={onClose}
+        className="fixed inset-0 bg-[#1C2733]/60 backdrop-blur-xs anim-modal-backdrop"
+      />
 
-        {/* Modal Window */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 12 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 12 }}
-          transition={{ duration: 0.25 }}
-          className="relative w-full max-w-2xl bg-[#FFFFFF] rounded-sm shadow-2xl border border-[#D1C9BC] overflow-hidden z-10 my-8"
-        >
+      {/* Modal Window */}
+      <div className="relative w-full max-w-2xl bg-[#FFFFFF] rounded-sm shadow-2xl border border-[#D1C9BC] overflow-hidden z-10 my-8 anim-modal-card">
           {/* Header */}
           <div className="p-6 bg-[#FAF8F5] border-b border-[#E3DDD3] flex items-center justify-between">
             <div className="flex items-center space-x-3.5">
@@ -120,8 +112,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
               Esmu iepazinies / Aizvērt
             </button>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </AnimatePresence>
   );
 };

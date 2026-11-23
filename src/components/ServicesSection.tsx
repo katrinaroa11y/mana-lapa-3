@@ -1,7 +1,11 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { Reveal } from './Reveal';
 import { SERVICES } from '../data/practiceData';
-import { Clock, MapPin, Banknote, Check, Calendar } from 'lucide-react';
+import Clock from 'lucide-react/dist/esm/icons/clock';
+import MapPin from 'lucide-react/dist/esm/icons/map-pin';
+import Banknote from 'lucide-react/dist/esm/icons/banknote';
+import Check from 'lucide-react/dist/esm/icons/check';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
 import { renderFormattedText } from '../utils/formatText';
 
 interface ServicesSectionProps {
@@ -32,15 +36,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 xl:gap-6">
           {SERVICES.map((service, index) => (
-            <motion.div
+            <Reveal
               key={service.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.12,
-              }}
+              delayMs={index * 120}
               className="relative rounded-sm flex flex-col justify-between transition-all duration-300 bg-[#FAF8F5] border border-[#E3DDD3] px-6 pb-6 pt-7 lg:px-5 lg:pb-6 lg:pt-7 xl:px-6 xl:pb-7 xl:pt-8 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] hover:border-[#1C2733]/40 hover:shadow-[0_6px_20px_-4px_rgba(28,39,51,0.08)]"
             >
               <div>
@@ -51,8 +49,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   </h3>
                 </div>
 
-                {/* Duration, Format & Price - matching TopicsSection light gray label size and color */}
-                <div className="lg:min-h-[112px] flex flex-col justify-start space-y-2 mb-6 text-sm text-[#6E7D8C] font-normal bg-[#FFFFFF] p-4 rounded-sm border border-[#E3DDD3]">
+                {/* Duration, Format & Price */}
+                <div className="lg:min-h-[112px] flex flex-col justify-start space-y-2 mb-6 text-sm text-[#455260] font-normal bg-[#FFFFFF] p-4 rounded-sm border border-[#E3DDD3]">
                   <div className="flex items-center space-x-2.5">
                     <Clock className="w-4 h-4 text-[#668261] shrink-0" />
                     <span className="leading-snug">{service.duration}</span>
@@ -119,7 +117,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   </span>
                 </button>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 

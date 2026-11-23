@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { Reveal } from './Reveal';
 import { renderFormattedText } from '../utils/formatText';
 import sessionNotesImg from '../assets/images/therapy_session_notes_1790166479933.jpg';
 import sessionNotesWebp480 from '../assets/images/therapy_session_notes-480.webp';
@@ -42,13 +42,7 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Authentic Session Photo - TIKAI DATORA VERSIJĀ */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="hidden lg:flex lg:col-span-5 justify-start"
-          >
+          <Reveal direction="left" className="hidden lg:flex lg:col-span-5 justify-start">
             <div className="relative w-full max-w-[420px] lg:max-w-[460px] rounded-sm overflow-hidden shadow-[0_4px_24px_-4px_rgba(28,39,51,0.08)] aspect-[3/4] bg-[#F4EFEA]">
               <picture>
                 <source
@@ -68,16 +62,10 @@ export const AboutSection: React.FC = () => {
                 />
               </picture>
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Right Column: Copy & Headings */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-7 flex flex-col justify-center"
-          >
+          <Reveal direction="right" className="lg:col-span-7 flex flex-col justify-center">
             {/* Section Eyebrow */}
             <div className="flex items-center space-x-3 mb-4">
               <span className="w-8 h-px bg-[#668261]" />
@@ -91,11 +79,11 @@ export const AboutSection: React.FC = () => {
               Sveiks,
             </h2>
 
-            {/* Formatted Paragraphs with 7% smaller font size on mobile, justified alignment */}
-            <div className="space-y-6 text-[16.7px] sm:text-xl leading-relaxed text-[#455260] font-normal text-justify">
+            {/* Formatted Paragraphs: 7% smaller on mobile, 10% smaller on desktop (18px), #373737 color */}
+            <div className="space-y-6 text-[16.7px] sm:text-xl lg:text-[18px] leading-relaxed text-[#373737] font-normal text-justify">
               {paragraphs.map((para, idx) => (
-                <p key={idx} className="text-[16.7px] sm:text-xl leading-relaxed text-[#455260] font-normal text-justify">
-                  {renderFormattedText(para)}
+                <p key={idx} className="text-[16.7px] sm:text-xl lg:text-[18px] leading-relaxed text-[#373737] font-normal text-justify">
+                  {renderFormattedText(para, 'font-semibold text-[#373737]')}
                 </p>
               ))}
             </div>
@@ -120,7 +108,7 @@ export const AboutSection: React.FC = () => {
                 />
               </picture>
             </div>
-          </motion.div>
+          </Reveal>
 
         </div>
       </div>

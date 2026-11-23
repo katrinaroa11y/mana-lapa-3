@@ -1,17 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
-import { AboutSection } from './components/AboutSection';
-import { ServicesSection } from './components/ServicesSection';
-import { TopicsSection } from './components/TopicsSection';
-import { ApproachSection } from './components/ApproachSection';
-import { FaqSection } from './components/FaqSection';
-import { ContactSection } from './components/ContactSection';
-import { Footer } from './components/Footer';
-import { BookingModal } from './components/BookingModal';
-import { PrivacyModal } from './components/PrivacyModal';
-import { BlogList } from './components/BlogList';
-import { BlogPostSingle } from './components/BlogPostSingle';
+
+const AboutSection = lazy(() =>
+  import('./components/AboutSection').then((m) => ({ default: m.AboutSection }))
+);
+const ServicesSection = lazy(() =>
+  import('./components/ServicesSection').then((m) => ({ default: m.ServicesSection }))
+);
+const TopicsSection = lazy(() =>
+  import('./components/TopicsSection').then((m) => ({ default: m.TopicsSection }))
+);
+const ApproachSection = lazy(() =>
+  import('./components/ApproachSection').then((m) => ({ default: m.ApproachSection }))
+);
+const FaqSection = lazy(() =>
+  import('./components/FaqSection').then((m) => ({ default: m.FaqSection }))
+);
+const ContactSection = lazy(() =>
+  import('./components/ContactSection').then((m) => ({ default: m.ContactSection }))
+);
+const Footer = lazy(() =>
+  import('./components/Footer').then((m) => ({ default: m.Footer }))
+);
+const BookingModal = lazy(() =>
+  import('./components/BookingModal').then((m) => ({ default: m.BookingModal }))
+);
+const PrivacyModal = lazy(() =>
+  import('./components/PrivacyModal').then((m) => ({ default: m.PrivacyModal }))
+);
+const BlogList = lazy(() =>
+  import('./components/BlogList').then((m) => ({ default: m.BlogList }))
+);
+const BlogPostSingle = lazy(() =>
+  import('./components/BlogPostSingle').then((m) => ({ default: m.BlogPostSingle }))
+);
+
+const PageFallback = () => <div className="min-h-screen bg-[#FAF8F5]" aria-hidden="true" />;
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -34,20 +59,26 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToSectionWhenReady = (sectionId: string, attemptsLeft = 20) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+      return;
+    }
+    if (attemptsLeft > 0) {
+      setTimeout(() => scrollToSectionWhenReady(sectionId, attemptsLeft - 1), 50);
+    }
+  };
+
   const handleNavigateHome = (sectionId?: string) => {
     if (window.location.pathname !== '/') {
       window.history.pushState({}, '', sectionId ? `/#${sectionId}` : '/');
       setCurrentPath('/');
     }
-    
+
     if (sectionId) {
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const offset = element.getBoundingClientRect().top + window.pageYOffset - 80;
-          window.scrollTo({ top: offset, behavior: 'smooth' });
-        }
-      }, 50);
+      setTimeout(() => scrollToSectionWhenReady(sectionId), 50);
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -73,67 +104,89 @@ export default function App() {
         onNavigateBlogs={() => navigate('/blogs')}
         onNavigateContacts={() => navigate('/kontakti')}
         onNavigatePost={(slug) => navigate(`/blogs/${slug}`)}
-        currentPath={currentPath}
-        language="lv"
       />
 
       <main className="flex-grow">
         {isSinglePostPage ? (
           /* Single Blog Post Template (/blogs/:slug) */
-          <BlogPostSingle
-            slug={singlePostSlug}
-            onBackToBlogs={() => navigate('/blogs')}
-            onSelectPost={(slug) => navigate(`/blogs/${slug}`)}
-            onOpenBooking={() => handleOpenBooking()}
-            onNavigateHome={handleNavigateHome}
-          />
+          <Suspense fallback={<PageFallback />}>
+            <BlogPostSingle
+              slug={singlePostSlug}
+              onBackToBlogs={() => navigate('/blogs')}
+              onSelectPost={(slug) => navigate(`/blogs/${slug}`)}
+              onOpenBooking={() => handleOpenBooking()}
+              onNavigateHome={handleNavigateHome}
+            />
+          </Suspense>
         ) : isBlogsPage ? (
           /* Blog List Page (/blogs) */
-          <BlogList
-            onSelectPost={(slug) => navigate(`/blogs/${slug}`)}
-            onOpenBooking={() => handleOpenBooking()}
-            isPage={true}
-          />
+          <Suspense fallback={<PageFallback />}>
+            <BlogList
+              onSelectPost={(slug) => navigate(`/blogs/${slug}`)}
+              isPage={true}
+            />
+          </Suspense>
         ) : isContactsPage ? (
           /* Dedicated Contacts Page (/kontakti) */
-          <ContactSection isPage={true} />
+          <Suspense fallback={<PageFallback />}>
+            <ContactSection isPage={true} />
+          </Suspense>
         ) : (
           /* Main Homepage View */
           <>
             <HeroSection onOpenBooking={() => handleOpenBooking()} />
-            <AboutSection />
-            <ServicesSection onOpenBooking={handleOpenBooking} />
-            <TopicsSection />
-            <ApproachSection />
-
-            {/* BUJ (FaqSection) */}
-            <FaqSection onOpenBooking={() => handleOpenBooking()} />
-
-            <ContactSection />
+            <Suspense fallback={null}>
+              <AboutSection />
+            </Suspense>
+            <Suspense fallback={null}>
+              <ServicesSection onOpenBooking={handleOpenBooking} />
+            </Suspense>
+            <Suspense fallback={null}>
+              <TopicsSection />
+            </Suspense>
+            <Suspense fallback={null}>
+              <ApproachSection />
+            </Suspense>
+            <Suspense fallback={null}>
+              <FaqSection />
+            </Suspense>
+            <Suspense fallback={null}>
+              <ContactSection />
+            </Suspense>
           </>
         )}
       </main>
 
       {/* Footer */}
-      <Footer
-        onOpenPrivacy={() => setIsPrivacyOpen(true)}
-        onOpenBooking={() => handleOpenBooking()}
-        onNavigateBlogs={() => navigate('/blogs')}
-        onNavigateHome={handleNavigateHome}
-      />
+      <Suspense fallback={null}>
+        <Footer
+          onOpenPrivacy={() => setIsPrivacyOpen(true)}
+          onOpenBooking={() => handleOpenBooking()}
+          onNavigateBlogs={() => navigate('/blogs')}
+          onNavigateHome={handleNavigateHome}
+        />
+      </Suspense>
 
       {/* Booking Modal */}
-      <BookingModal
-        isOpen={isBookingOpen}
-        onClose={() => setIsBookingOpen(false)}
-        preselectedServiceId={selectedServiceId}
-      />
+      {isBookingOpen && (
+        <Suspense fallback={null}>
+          <BookingModal
+            isOpen={isBookingOpen}
+            onClose={() => setIsBookingOpen(false)}
+            preselectedServiceId={selectedServiceId}
+          />
+        </Suspense>
+      )}
 
       {/* Privacy Policy Modal */}
-      <PrivacyModal
-        isOpen={isPrivacyOpen}
-        onClose={() => setIsPrivacyOpen(false)}
-      />
+      {isPrivacyOpen && (
+        <Suspense fallback={null}>
+          <PrivacyModal
+            isOpen={isPrivacyOpen}
+            onClose={() => setIsPrivacyOpen(false)}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }

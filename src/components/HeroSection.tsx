@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { Calendar, ArrowDown, LockKeyhole, ScrollText, Fingerprint } from 'lucide-react';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import ArrowDown from 'lucide-react/dist/esm/icons/arrow-down';
+import LockKeyhole from 'lucide-react/dist/esm/icons/lock-keyhole';
+import ScrollText from 'lucide-react/dist/esm/icons/scroll-text';
+import Fingerprint from 'lucide-react/dist/esm/icons/fingerprint';
 
 const DEFAULT_PORTRAIT = '/psihologe-riga-katrina-rozenbaha-prakse.jpg';
 const STORAGE_KEY = 'katrina_custom_hero_portrait';
@@ -54,48 +57,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           <div className="lg:col-span-7 flex flex-col justify-center">
             
             {/* Practice Category Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center justify-center sm:justify-start sm:space-x-3 mb-6"
-            >
+            <div className="flex items-center justify-center sm:justify-start sm:space-x-3 mb-6 anim-fade-up">
               <span className="hidden sm:block w-8 h-px bg-[#668261]" />
               <span className="text-[9.5px] sm:text-xs font-semibold uppercase tracking-[0.07em] sm:tracking-[0.2em] text-[#668261] text-center sm:text-left whitespace-nowrap">
                 Shēmu terapija | EMDR | Klīniskā psiholoģija
               </span>
-            </motion.div>
+            </div>
 
             {/* Main Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.08 }}
-              className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C2733] tracking-tight leading-[1.12] mb-6"
-            >
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C2733] tracking-tight leading-[1.12] mb-6 anim-fade-up anim-delay-80">
               <span className="italic text-[#668261] font-normal">
                 Palīdzu radīt
               </span> <br />
               paliekošas pārmaiņas.
-            </motion.h1>
+            </h1>
 
             {/* Subtitle / Intro Statement */}
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.16 }}
-              className="text-base sm:text-lg text-[#455260] font-normal max-w-xl leading-relaxed mb-9 text-justify"
-            >
+            <p className="text-base sm:text-lg text-[#455260] font-normal max-w-xl leading-relaxed mb-9 text-justify anim-fade-up anim-delay-160">
               Klīniskās psiholoģes konsultācijas trauksmes, stresa, depresijas, izdegšanas, attiecību problēmu un citu emocionālu grūtību risināšanai. Konsultācijas attālināti visā Latvijā un klātienē Rīgā.
-            </motion.p>
+            </p>
 
             {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.24 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8 lg:mb-12"
-            >
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8 lg:mb-12 anim-fade-up anim-delay-240">
               <button
                 id="hero-booking-cta"
                 onClick={onOpenBooking}
@@ -120,15 +103,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 <span>Vairāk par mani</span>
                 <ArrowDown className="w-4 h-4 text-[#668261]" />
               </a>
-            </motion.div>
+            </div>
 
             {/* Mobile-only Portrait */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.28 }}
-              className="block lg:hidden mb-6 sm:mb-10 max-w-sm sm:max-w-md mx-auto w-full"
-            >
+            <div className="block lg:hidden mb-6 sm:mb-10 max-w-sm sm:max-w-md mx-auto w-full anim-fade-scale anim-delay-280">
               <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-md shadow-[0_6px_24px_-6px_rgba(0,0,0,0.12)]">
                 {portraitSrc === DEFAULT_PORTRAIT ? (
                   <picture>
@@ -161,15 +139,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   />
                 )}
               </div>
-            </motion.div>
+            </div>
 
             {/* Key Trust Highlights - Visible across mobile and desktop */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.32 }}
-              className="flex sm:pt-4 flex-col sm:flex-row items-start gap-5 sm:gap-10 lg:gap-14"
-            >
+            <div className="flex sm:pt-4 flex-col sm:flex-row items-start gap-5 sm:gap-10 lg:gap-14 anim-fade-up anim-delay-320">
               <div className="flex items-start space-x-3">
                 <LockKeyhole
                   className="w-4 h-4 text-[#556B51] shrink-0 mt-0.5"
@@ -204,17 +177,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   Individuāla pieeja
                 </span>
               </div>
-            </motion.div>
+            </div>
 
           </div>
 
           {/* Right Column: Editorial Portrait for Desktop */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="hidden lg:flex lg:col-span-5 justify-center lg:justify-end"
-          >
+          <div className="hidden lg:flex lg:col-span-5 justify-center lg:justify-end anim-fade-scale anim-delay-150">
             <div className="relative w-full max-w-sm sm:max-w-md">
               <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-md shadow-[0_6px_24px_-6px_rgba(0,0,0,0.12)]">
                 {portraitSrc === DEFAULT_PORTRAIT ? (
@@ -249,7 +217,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 )}
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

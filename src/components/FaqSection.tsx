@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { FAQS } from '../data/practiceData';
-import { ChevronDown, MessageCircle } from 'lucide-react';
+import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
+import MessageCircle from 'lucide-react/dist/esm/icons/message-circle';
 
-interface FaqSectionProps {
-  onOpenBooking?: () => void;
-}
-
-export const FaqSection: React.FC<FaqSectionProps> = () => {
+export const FaqSection: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(
     FAQS.length > 0 ? FAQS[0].id : null
   );
@@ -69,21 +65,17 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
                   </div>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 text-sm sm:text-base text-[#455260] leading-[1.8] border-t border-[#E3DDD3]/70 pt-4 font-normal">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 text-sm sm:text-base text-[#455260] leading-[1.8] border-t border-[#E3DDD3]/70 pt-4 font-normal">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })}

@@ -37,25 +37,9 @@ export interface FaqItem {
   category?: string;
 }
 
-export interface WorkTopic {
-  id: string;
-  title: string;
-  description?: string;
-  iconName?: string;
-}
-
-export interface EducationItem {
-  id: string;
-  title: string;
-  institution?: string;
-  period: string;
-  degree?: string;
-  year?: string;
-}
-
 export interface BookingFormData {
   serviceId: string;
-  format: 'klatiene' | 'tiessaiste';
+  format: 'klatiene' | 'tiessaiste' | '';
   date: string;
   timeSlot: string;
   fullName: string;

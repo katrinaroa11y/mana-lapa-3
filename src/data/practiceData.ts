@@ -1,18 +1,5 @@
-import { ServiceItem, ApproachMethod, FaqItem, WorkTopic } from '../types';
-
-export const PRACTICE_INFO = {
-  name: 'Katrīna Rozenbaha',
-  title: 'Reģistrēta klīniskā psiholoģe',
-  registrationNumber: 'Psihologu reģistra Nr. 7001430',
-  experience: '1000+ konsultētu un izglītotu klientu',
-  location: 'Krišjāņa Barona iela 32, Rīga & Tiešsaistē (Google Meet / MS Teams)',
-  email: 'katrina.rozenbaha@gmail.com',
-  phone: '+371 27572910',
-  workingHours: 'Pirmdiena - Piektdiena: 09:00 - 19:00',
-  social: {
-    instagram: 'https://instagram.com/psihologs.katrina.rozenbaha',
-  }
-};
+import { ServiceItem, ApproachMethod, FaqItem } from '../types';
+export { PRACTICE_INFO } from './practiceInfo';
 
 export const SERVICES: ServiceItem[] = [
   {
@@ -230,52 +217,4 @@ export const TIME_SLOTS = [
   '17:30',
   '18:30',
   'Par citu laiku vai pierakstu klātienē atzīmē šo lauciņu un sazināšos ar Tevi personīgi'
-];
-
-export const WORK_TOPICS: WorkTopic[] = [
-  {
-    id: 'trauksme-panika',
-    title: 'Trauksme un panikas lēkmes',
-    iconName: 'Wind'
-  },
-  {
-    id: 'attiecibu-problemas',
-    title: 'Attiecību problēmas',
-    iconName: 'Users'
-  },
-  {
-    id: 'izdeggana-stress',
-    title: 'Izdegšana un stress',
-    iconName: 'ZapOff'
-  },
-  {
-    id: 'depresija-nomaktiba',
-    title: 'Depresija un nomāktība',
-    iconName: 'Cloud'
-  },
-  {
-    id: 'zems-pasnovertejums',
-    title: 'Zems pašnovērtējums',
-    iconName: 'UserCheck'
-  },
-  {
-    id: 'seras-zaudejumi',
-    title: 'Sēras un zaudējumi',
-    iconName: 'Feather'
-  },
-  {
-    id: 'emociju-regulacija',
-    title: 'Emociju regulācija un atkarības',
-    iconName: 'Sliders'
-  },
-  {
-    id: 'traumatiska-pieredze',
-    title: 'Traumatiska pieredze',
-    iconName: 'LifeBuoy'
-  },
-  {
-    id: 'personiga-izaugsme',
-    title: 'Personīgā izaugsme un ceļš uz mērķiem',
-    iconName: 'Compass'
-  }
 ];

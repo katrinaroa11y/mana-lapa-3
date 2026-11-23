@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, Calendar, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageSquare, AlertCircle } from 'lucide-react';
+import X from 'lucide-react/dist/esm/icons/x';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Clock from 'lucide-react/dist/esm/icons/clock';
+import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
+import ChevronRight from 'lucide-react/dist/esm/icons/chevron-right';
+import ChevronLeft from 'lucide-react/dist/esm/icons/chevron-left';
+import MessageSquare from 'lucide-react/dist/esm/icons/message-square';
+import AlertCircle from 'lucide-react/dist/esm/icons/alert-circle';
 import { SERVICES, TIME_SLOTS } from '../data/practiceData';
 import { BookingFormData } from '../types';
 
@@ -176,25 +182,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-        {/* Backdrop */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={resetForm}
-          className="fixed inset-0 bg-[#1C2733]/60 backdrop-blur-xs"
-        />
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      {/* Backdrop */}
+      <div
+        onClick={resetForm}
+        className="fixed inset-0 bg-[#1C2733]/60 backdrop-blur-xs anim-modal-backdrop"
+      />
 
-        {/* Modal Container */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 12 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 12 }}
-          transition={{ duration: 0.25 }}
-          className="relative w-full max-w-xl bg-[#FFFFFF] rounded-sm shadow-2xl border border-[#D1C9BC] overflow-hidden z-10 my-8"
-        >
+      {/* Modal Container */}
+      <div className="relative w-full max-w-xl bg-[#FFFFFF] rounded-sm shadow-2xl border border-[#D1C9BC] overflow-hidden z-10 my-8 anim-modal-card">
           {/* Modal Header */}
           <div className="p-6 bg-[#FAF8F5] border-b border-[#E3DDD3] flex items-center justify-between">
             <div>
@@ -576,10 +572,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
               </form>
             )}
-          </div>
-        </motion.div>
+        </div>
       </div>
-    </AnimatePresence>
+    </div>
   );
 };
 

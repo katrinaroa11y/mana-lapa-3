@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { Reveal } from './Reveal';
 import calmSunlightWallImg from '../assets/images/calm_sunlight_wall_1790086756847.jpg';
 import calmSunlightWallWebp480 from '../assets/images/calm_sunlight_wall-480.webp';
 import calmSunlightWallWebp800 from '../assets/images/calm_sunlight_wall-800.webp';
@@ -36,13 +36,7 @@ export const TopicsSection: React.FC = () => {
         <div className="space-y-6 sm:space-y-8">
           
           {/* 01. Trauksme, stress un emocionālas grūtības (Plašs horizontāls bloks ar foto) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-12 bg-[#FFFFFF] border border-[#E3DDD3] rounded-sm overflow-hidden shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)] hover:border-[#1C2733]/30 transition-all duration-300"
-          >
+          <Reveal className="grid grid-cols-1 lg:grid-cols-12 bg-[#FFFFFF] border border-[#E3DDD3] rounded-sm overflow-hidden shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)] hover:border-[#1C2733]/30 transition-all duration-300">
             <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-end mb-4">
@@ -55,7 +49,7 @@ export const TopicsSection: React.FC = () => {
                   Trauksme, stress un grūtības ar emociju regulāciju
                 </h3>
 
-                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify">
                   Profesionāls atbalsts situācijās, kad iekšējā spriedze, satraukums vai nomāktība sāk ietekmēt miegu, labsajūtu un spēju pieņemt lēmumus.
                 </p>
 
@@ -104,17 +98,14 @@ export const TopicsSection: React.FC = () => {
               </picture>
               <div className="absolute inset-0 bg-[#1C2733]/5 pointer-events-none" />
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Row 2: 02 & 03 Bloki blakus (asimetrisks 5 / 7 izkārtojums) */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8">
             
             {/* 02. Attiecības un attiecības ar sevi */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+            <Reveal
+              delayMs={100}
               className="md:col-span-5 bg-[#FFFFFF] border border-[#E3DDD3] rounded-sm p-8 sm:p-10 flex flex-col justify-between shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)] hover:border-[#1C2733]/30 transition-all duration-300"
             >
               <div>
@@ -128,7 +119,7 @@ export const TopicsSection: React.FC = () => {
                   Attiecības ar sevi un citiem
                 </h3>
 
-                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify">
                   Kā veidot patiesas saiknes ar līdzcilvēkiem, saglabājot iekšēju skaidrību, cieņu pret savām robežām un mierpilnu pašapziņu.
                 </p>
 
@@ -147,14 +138,11 @@ export const TopicsSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
 
             {/* 03. Traumatiska pieredze, sēras un emociju regulācija */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.16 }}
+            <Reveal
+              delayMs={160}
               className="md:col-span-7 bg-[#F4EFEA] border border-[#DDD5C7] rounded-sm p-8 sm:p-10 flex flex-col justify-between shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)] hover:border-[#1C2733]/30 transition-all duration-300"
             >
               <div>
@@ -168,7 +156,7 @@ export const TopicsSection: React.FC = () => {
                   Traumatiska pieredze, sēras un bērnības ievainojumu dziedēšana
                 </h3>
 
-                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify">
                   Piesardzīga un droša telpa dziļāku ievainojumu apstrādei, zaudējumu izsērošanai un emocionālās pašregulācijas mehānismu pakāpeniskai atjaunošanai.
                 </p>
 
@@ -187,16 +175,13 @@ export const TopicsSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
 
           </div>
 
           {/* 04. Personīgā izaugsme un pārmaiņas (Plašs noslēdzošs horizontāls bloks ar foto) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <Reveal
+            delayMs={200}
             className="grid grid-cols-1 lg:grid-cols-12 bg-[#FFFFFF] border border-[#E3DDD3] rounded-sm overflow-hidden shadow-[0_2px_12px_-3px_rgba(28,39,51,0.03)] hover:border-[#1C2733]/30 transition-all duration-300"
           >
             <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
@@ -211,7 +196,7 @@ export const TopicsSection: React.FC = () => {
                   Personīgā izaugsme un pārmaiņas
                 </h3>
 
-                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify" style={{ textAlign: 'justify' }}>
+                <p className="text-base sm:text-lg text-[#5A6775] leading-relaxed mb-8 text-justify">
                   Iespēja iegūt resursus - teorētiskās zināšanas, uzdevumus sevis dziļākai iepazīšanai un daudzveidīgas tehnikas miera vairošanai ķermenī un prātā.
                 </p>
 
@@ -256,7 +241,7 @@ export const TopicsSection: React.FC = () => {
               </picture>
               <div className="absolute inset-0 bg-[#1C2733]/5 pointer-events-none" />
             </div>
-          </motion.div>
+          </Reveal>
 
         </div>
 

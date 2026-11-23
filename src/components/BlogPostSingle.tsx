@@ -1,8 +1,11 @@
 
 import React, { useEffect } from 'react';
-import { motion } from 'motion/react';
 import { BLOG_POSTS } from '../data/blogData';
-import { ArrowLeft, Calendar, Clock, Share2, BookOpen } from 'lucide-react';
+import ArrowLeft from 'lucide-react/dist/esm/icons/arrow-left';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Clock from 'lucide-react/dist/esm/icons/clock';
+import Share2 from 'lucide-react/dist/esm/icons/share-2';
+import BookOpen from 'lucide-react/dist/esm/icons/book-open';
 
 const katrinaPortrait = '/psihologe-riga-katrina-rozenbaha-prakse.jpg';
 
@@ -66,12 +69,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
         </div>
 
         {/* Article Header */}
-        <motion.header
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="space-y-6 mb-10"
-        >
+        <header className="space-y-6 mb-10 anim-fade-up">
           <div className="inline-block text-[11px] font-mono uppercase tracking-wider text-[#1C2733] bg-[#FFFFFF] px-3 py-1 rounded-sm border border-[#D1C9BC]">
             {post.category}
           </div>
@@ -94,15 +92,10 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
               <span>{post.readTime}</span>
             </div>
           </div>
-        </motion.header>
+        </header>
 
         {/* Featured Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-12 rounded-sm overflow-hidden border border-[#E3DDD3] shadow-[0_4px_20px_-4px_rgba(28,39,51,0.06)] bg-[#FFFFFF]"
-        >
+        <div className="mb-12 rounded-sm overflow-hidden border border-[#E3DDD3] shadow-[0_4px_20px_-4px_rgba(28,39,51,0.06)] bg-[#FFFFFF] anim-fade-scale anim-delay-100">
           <img
             src={post.featuredImage}
             alt={post.featuredImageAlt || post.title}
@@ -110,15 +103,10 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
             decoding="async"
             className="block w-full h-[280px] sm:h-[420px] object-cover object-center"
           />
-        </motion.div>
+        </div>
 
         {/* Article Content Body */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-[#FFFFFF] rounded-sm border border-[#E3DDD3] p-7 sm:p-10 lg:p-14 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] space-y-8"
-        >
+        <div className="bg-[#FFFFFF] rounded-sm border border-[#E3DDD3] p-7 sm:p-10 lg:p-14 shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] space-y-8 anim-fade-up anim-delay-200">
           {/* Intro Lead */}
           <p className="text-base sm:text-lg text-[#1C2733] font-normal leading-relaxed border-l-2 border-[#668261] pl-5 py-1 italic font-serif whitespace-pre-line">
             {post.content.intro}
@@ -202,7 +190,7 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
               Piesakies konsultācijai
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Other Posts Section */}
         {otherPosts.length > 0 && (

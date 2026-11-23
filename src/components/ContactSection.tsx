@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import { PRACTICE_INFO } from '../data/practiceData';
-import { Mail, Phone, Send, CheckCircle2, Instagram, Shield, Loader2, AlertCircle } from 'lucide-react';
+import { PRACTICE_INFO } from '../data/practiceInfo';
+import Mail from 'lucide-react/dist/esm/icons/mail';
+import Phone from 'lucide-react/dist/esm/icons/phone';
+import Send from 'lucide-react/dist/esm/icons/send';
+import CheckCircle2 from 'lucide-react/dist/esm/icons/check-circle-2';
+import Instagram from 'lucide-react/dist/esm/icons/instagram';
+import Shield from 'lucide-react/dist/esm/icons/shield';
+import Loader2 from 'lucide-react/dist/esm/icons/loader-2';
+import AlertCircle from 'lucide-react/dist/esm/icons/alert-circle';
 
 interface ContactSectionProps {
   isPage?: boolean;

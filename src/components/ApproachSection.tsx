@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { Reveal } from './Reveal';
 import { APPROACH_METHODS, EDUCATION } from '../data/practiceData';
 import { ApproachMethod, CertificateInfo } from '../types';
 import { renderFormattedText } from '../utils/formatText';
-import { Play, ExternalLink, X } from 'lucide-react';
+import Play from 'lucide-react/dist/esm/icons/play';
+import ExternalLink from 'lucide-react/dist/esm/icons/external-link';
+import X from 'lucide-react/dist/esm/icons/x';
 
 export const ApproachSection: React.FC = () => {
   const methods = APPROACH_METHODS;
@@ -71,12 +73,9 @@ export const ApproachSection: React.FC = () => {
               const certs = getCerts(method);
 
               return (
-                <motion.div
+                <Reveal
                   key={method.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.12 }}
+                  delayMs={index * 120}
                   className="p-6 sm:p-7 rounded-sm bg-[#FAF8F5] border border-[#E3DDD3] hover:border-[#1C2733]/40 hover:shadow-[0_4px_20px_-4px_rgba(28,39,51,0.06)] transition-all duration-300 flex flex-col justify-between space-y-5"
                 >
                   <div className="flex flex-col">
@@ -101,10 +100,7 @@ export const ApproachSection: React.FC = () => {
                     )}
 
                     {/* Method description: unified fixed height on desktop so video buttons align on exact same top edge */}
-                    <div
-                      className="text-base text-[#1C2733] leading-relaxed whitespace-pre-line space-y-2 font-normal text-justify lg:h-[240px] xl:h-[190px] flex flex-col justify-start"
-                      style={{ textAlign: 'justify' }}
-                    >
+                    <div className="text-base text-[#1C2733] leading-relaxed whitespace-pre-line space-y-2 font-normal text-justify lg:h-[240px] xl:h-[190px] flex flex-col justify-start">
                       {renderFormattedText(method.description)}
                     </div>
 
@@ -158,7 +154,7 @@ export const ApproachSection: React.FC = () => {
                       ))}
                     </div>
                   )}
-                </motion.div>
+                </Reveal>
               );
             })}
           </div>
@@ -166,20 +162,15 @@ export const ApproachSection: React.FC = () => {
       </section>
 
       {/* Video Modal */}
-      <AnimatePresence>
-        {selectedVideo && (
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs anim-modal-backdrop"
+          onClick={() => setSelectedVideo(null)}
+        >
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs"
-            onClick={() => setSelectedVideo(null)}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-[#FAF8F5] border border-[#D1C9BC] rounded-sm shadow-2xl max-w-3xl w-full overflow-hidden anim-modal-card"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              transition={{ duration: 0.2 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-[#FAF8F5] border border-[#D1C9BC] rounded-sm shadow-2xl max-w-3xl w-full overflow-hidden"
-            >
               {/* Modal Header */}
               <div className="flex items-center justify-between px-5 py-3.5 border-b border-[#E3DDD3] bg-[#FFFFFF]">
                 <div className="flex items-center space-x-2">
@@ -234,10 +225,9 @@ export const ApproachSection: React.FC = () => {
                   Aizvērt
                 </button>
               </div>
-            </motion.div>
+            </div>
           </div>
         )}
-      </AnimatePresence>
 
       {/* Section 2: Izglītība */}
       <section id="izglitiba" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] relative">

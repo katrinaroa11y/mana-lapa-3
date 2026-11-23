@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Menu, X, Sparkles } from 'lucide-react';
-import { PRACTICE_INFO } from '../data/practiceData';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Menu from 'lucide-react/dist/esm/icons/menu';
+import X from 'lucide-react/dist/esm/icons/x';
+import Sparkles from 'lucide-react/dist/esm/icons/sparkles';
+import { PRACTICE_INFO } from '../data/practiceInfo';
 
 interface HeaderProps {
   onOpenBooking: (serviceId?: string) => void;
@@ -8,8 +11,6 @@ interface HeaderProps {
   onNavigateBlogs?: () => void;
   onNavigateContacts?: () => void;
   onNavigatePost?: (slug: string) => void;
-  currentPath?: string;
-  language?: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -17,8 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigateHome,
   onNavigateBlogs,
   onNavigateContacts,
-  onNavigatePost,
-  currentPath = '/'
+  onNavigatePost
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -144,13 +144,13 @@ export const Header: React.FC<HeaderProps> = ({
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-7">
+        <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-medium tracking-wide text-[#455260] hover:text-[#1C2733] transition-colors py-1 relative group"
+              className="text-[15.4px] font-medium tracking-wide text-[#455260] hover:text-[#1C2733] transition-colors py-1 relative group whitespace-nowrap"
             >
               <span>{link.name}</span>
               <span className="absolute bottom-0 left-0 w-0 h-px bg-[#1C2733] transition-all duration-200 group-hover:w-full" />

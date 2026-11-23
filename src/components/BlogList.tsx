@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { motion } from 'motion/react';
 import { BLOG_POSTS, BlogPost } from '../data/blogData';
-import { User, Calendar, ArrowRight } from 'lucide-react';
+import User from 'lucide-react/dist/esm/icons/user';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 
 interface BlogListProps {
   onSelectPost: (slug: string) => void;
-  onOpenBooking?: () => void;
   isPage?: boolean;
 }
 
@@ -38,13 +38,12 @@ export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {postsRow.map((post: BlogPost, index: number) => (
-            <motion.article
+            <article
               key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => onSelectPost(post.slug)}
-              className="group bg-[#FFFFFF] rounded-sm border border-[#E3DDD3] overflow-hidden shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] hover:shadow-[0_8px_24px_-4px_rgba(28,39,51,0.08)] hover:border-[#1C2733]/40 transition-all duration-300 flex flex-col cursor-pointer"
+              className={`group bg-[#FFFFFF] rounded-sm border border-[#E3DDD3] overflow-hidden shadow-[0_2px_12px_-3px_rgba(28,39,51,0.04)] hover:shadow-[0_8px_24px_-4px_rgba(28,39,51,0.08)] hover:border-[#1C2733]/40 transition-all duration-300 flex flex-col cursor-pointer anim-fade-up ${
+                index === 1 ? 'anim-delay-100' : index >= 2 ? 'anim-delay-200' : ''
+              }`}
             >
               {/* Featured Image */}
               <div className="relative aspect-[4/3] overflow-hidden bg-[#F4EFEA] shrink-0 border-b border-[#E3DDD3]">
@@ -96,7 +95,7 @@ export const BlogList: React.FC<BlogListProps> = ({ onSelectPost, isPage = true 
                 </div>
 
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 
