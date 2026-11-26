@@ -105,6 +105,122 @@ Vai arī šeit:
     }
   },
   {
+    id: '5',
+    slug: 'ieksejais-kritikis-un-perfekcionisms-kapec-nekad-nav-gana-labi',
+    title: 'Iekšējais kritiķis un perfekcionisms: kāpēc „nekad nav gana labi”',
+    author: 'Katrīna Rozenbaha',
+    date: '2026. gads',
+    dateISO: '2026-11-26',
+    readTime: '6 min lasījums',
+    category: 'Shēmu terapija & Pašizziņa',
+    excerpt: 'Vai tavs lielākais kritizētājs esi tu pats? Šajā rakstā aplūkosim, no kurienes ceļās iekšējais kritiķis, kā ar to saistīts perfekcionisms un kā šo uz sevi vērsto prasību spiedienu var mazināt.',
+    featuredImage: '/blog_inner_critic_perfectionism.jpg',
+    featuredImageAlt: 'Atvērta pierakstu klade ar pildspalvu un tējas krūze uz koka galda pie loga',
+    content: {
+      intro: `Vai tavs lielākais kritizētājs esi tu pats? Vai esi sev teicis „es neesmu gana labs/laba” vai „kāda jēga censties”? Vai esi ko līdzīgu kādreiz dzirdējis no kāda sev tuva cilvēka? Ja jā, vai tas ietekmē to, kā tu sevi redzi, un to, vai uzdrošinies sākt ko jaunu (vai nesāc vispār)?
+Šajā rakstā aplūkosim, no kurienes ceļās iekšējais kritiķis, kā ar to saistīts perfekcionisms un kā šo uz sevi vērsto prasību spiedienu var mazināt.`,
+      sections: [
+        {
+          heading: 'Katram galvā ir savs orķestris',
+          body: `Cilvēki vidēji dzird aptuveni 400 - 800 domu vārdu minūtē (!), un tas ir vairāk nekā 24 tūkstoši vārdu ik stundu. Skan daudz, vai ne? Liela daļa no tā ir mūsu iekšējais dialogs. Un svarīgs jautājums ir, <b>kādā noskaņā</b> skan šie vārdi - pozitīvā, neitrālā un iedrošinošā vai arī uzbrūkošā, kritizējošā, sodošā un vainojošā?
+
+Palīdzēt izprast šo iekšējo dialogu var <b>shēmu terapija</b>, ko izstrādājis Džefrijs Jangs. Lasi par shēmu terapiju vairāk <a href="/blogs/shemu-terapija-izprast-savus-uzvedibas-paternus" data-navigate-post="shemu-terapija-izprast-savus-uzvedibas-paternus" class="underline text-[#668261] font-medium hover:text-[#4F684B]">šeit</a>.
+
+<b>Shēma</b> ir dziļi iesakņojies priekšstats un pārliecība par sevi, cilvēkiem un pasauli sev apkārt. Tā veidojas bērnībā.
+<b>Režīms</b> ir stāvoklis, kas uz brīdi pārņem mūsu domas, jūtas un uzvedību.
+Režīmu ir daudz. Sākotnēji aprakstīti aptuveni desmit, vēlāk speciālisti tos sīkāk izdalījuši vēl vairāk. Tāpēc bieži lieto salīdzinājumu: <b>katram galvā ir savs orķestris</b>, kurā spēlē dažādi dalībnieki.
+Šodien runāsim par diviem režīmiem:
+• <b>Kritiķi</b>
+• <b>Veselīgo pieaugušo</b>`
+        },
+        {
+          heading: 'Kas ir iekšējais kritiķis?',
+          body: `Iekšējais kritiķis ir internalizēta balss, kas mūs vērtē, kritizē un uzstāda pārmērīgas prasības. Tā rada kauna, nepietiekamības un trauksmes sajūtu.
+Shēmu terapijā kritiķis ir prasīga vai pat sodoša daļa. Tā veidojas no agri internalizētiem vecāku, autoritāšu un sabiedrības standartiem, un izpaužas kā stingra paškritika, perfekcionisms un sevis sodīšana.
+
+<b>Tā nav tava īstā balss.</b> Tā ir iemācīta: no vecākiem, skolotājiem, dažkārt arī no vienaudžiem, kas izsmējuši vai iebiedējuši.`
+        },
+        {
+          heading: 'Kā veidojas iekšējā kritika?',
+          body: `Bērnībā mums visiem ir piecas pamatvajadzības:
+• drošība
+• pieņemšana
+• autonomija
+• robežas
+• spontanitāte
+Ja kāda no tām netiek pietiekami apmierināta, veidojas jauni režīmi, jeb jauni „orķestra dalībnieki”.
+
+Iekšējās kritikas un perfekcionisma veidošanos var veicināt:
+• mīlestība par sasniegumiem, nevis par to, kas tu esi;
+• augstas prasības ģimenē;
+• kritika un kaunināšana;
+• salīdzināšana ar citiem: ''skaties, kā dara Jānis, viņam sanāk labāk!'';
+• teikumi „tu vari labāk” un ''pacenties vienreiz!'';
+• vecāks, kurš pats ir perfekcionists.
+
+Tie ir faktori, kas var palielināt iespējamību, nevis noteikums, ka izveidosies perfekcionisms un iekšējā kritika. Katra cilvēka stāsts ir citāds.`
+        },
+        {
+          heading: 'Kā tas izpaužas ikdienā?',
+          body: `Kritiķis un perfekcionisms bieži strādā pārī:
+• kritiķis rada spiedienu („tev jābūt labākam/labākai”);
+• perfekcionisms šo stresa un spiediena sajūtu mazina ar darbībām: izlabo vēlreiz, pastrādā ilgāk, atliec darīt, kamēr „nebūs ideāli”, vai nesāc vispār;
+• Tādējādi perfekcionisma uzvedība kļūst par mēģinājumu iegūt pieņemšanu, izvairīties no kauna vai kritikas un pasargāt sevi no ievainojamības;
+• tas īslaicīgi mazina stresu un nomierina, bet prasības kļūst vēl augstākas, un loks sākas no jauna, līdz ar to stress ilgtermiņā kāpj.
+
+Tādā veidā iekšējais kritiķis uztur un uzkurina perfekcionismu.`
+        },
+        {
+          heading: 'Kritiķis nav rakstura defekts',
+          body: `Sākotnēji tā bija gudra bērna stratēģija: „ja es ļoti centīšos, mani mīlēs un pieņems!”
+Kritiķim ir arī gaišā puse. Tas var palīdzēt sasniegt augstus rezultātus skolā, darbā un starppersonu attiecībās, saņemt atzinību un iet uz panākumiem.
+Taču ir arī ēnas puse. Pārmērīgas iekšējās prasības var veicināt:
+• izdegšanu;
+• prokrastināciju;
+• zemāku pašvērtējumu;
+• sajūtu, ka nekad nav gana labi.`
+        },
+        {
+          heading: 'Ko darīt?',
+          body: `<b>Nepadodies savam kritiķim.</b> Tev nav jāturpina vainot sevi, slīgt pašpārmetumos par senām kļūdām vai paša izdomātiem trūkumiem.
+Daļa no ceļā uz iekšējā kritiķa skaļuma mazināšanu ir tas, ka tu sāc stiprināt kādu daudz nozīmīgāku balsi: savu <b>Veselīgo pieaugušo.</b>
+
+Tā ir mūsu iekšējā daļa, kas:
+• redz realitāti tādu, kāda tā ir;
+• rūpējas par emocionālajām un praktiskajām vajadzībām;
+• spēj vadīt pārējos režīmus (iekšējo kritiķi, perfekcionistu, ievainoto bērnu).
+
+<b>Veselīgais pieaugušais ir tāds kā gādīgais vecāks</b>, kurš atbild par lēmumu pieņemšanu, robežu noteikšanu, veselīgu pašaprūpi un emociju izpaušanu. Viņa mērķis ir likt tev justies droši, mīlēti, būt līdzsvarā, ar veselīgu pašvērtējumu un līdzjūtību pret sevi. Stiprināt šo daļu var dažādos veidos, bet sākšu ar 2 konkrētiem uzdevumiem šodienai: 1) iepazīsti savu kritiķi un 2) ‘’iečekošanos’’ ar sevi`
+        },
+        {
+          heading: 'Uzdevums: iepazīsti savu kritiķi',
+          body: `Paņem lapu un pildi mierīgi, bez steigas.
+<b>Pieraksti trīs teikumus</b>, ko iekšējais kritiķis par tevi saka visbiežāk. (Tas ir tas, par ko tu sev domās pārmet, kur tu sev netici, kur šķiet, ka citiem sanāk labāk, kur ieskanās nosodījums, kritika vai vainas izteikšana)
+<b>Pēc kā šī kritika skan?</b> Kuras balsis šie trīs teikumi tev atgādina: vecāku, kāda skolotāja, paziņas vai sabiedrības?
+<b>No kā viņš mēģina tevi pasargāt?</b> No kā viņš baidās, kas notiks, ja viņš apklusīs?
+<b>Ko teiktu Veselīgais pieaugušais?</b> Iztēlojies, ka tev blakus ir tuvs cilvēks vai draugs līdzīgā situācijā. Ko tu viņam teiktu? Pārraksti kritiķa trīs teikumus šādā - siltā, iedrošinošā, mīlošā tonī.`
+        },
+        {
+          heading: 'Kā „iečekoties” ar sevi',
+          body: `Noslēgumā dod iespēju sev sajust gan savas emocijas, gan resursus. Paņem pāris minūtes un pabeidz divus teikumus:
+<b>„Šobrīd es jūtos …”</b>
+<b>„Šobrīd man ir vajadzīgs …”</b>
+
+Tas ir mazs veids, kā ik pa laikam (kaut vienu reizi dienā) ir iespējams dot vārdu tavam Veselīgajam pieaugušajam - viņa teiktajā sadzirdēsi savus priekus, bēdas, grūtības un izaicinājumus, kā arī nepieciešamos resursus un vajadzīgās robežas. Ieklausies, un Veselīgais pieaugušais atbildēs!
+
+<i>Šis raksts ir izglītojošs un nav speciālista aizstājējs. Ja iekšējā kritika vai spriedze kļūst smaga un grūti panesama, nebaidies meklēt speciālistu atbalstu.</i>`
+        }
+      ],
+      keyTakeaways: [
+        'Iekšējais kritiķis nav tava īstā balss – tā ir agrīni iemācīta stratēģija.',
+        'Perfekcionisms bieži darbojas pārī ar kritiķi, īslaicīgi mazinot spriedzi, bet ilgtermiņā to palielinot.',
+        'Veselīgā pieaugušā režīma stiprināšana palīdz veidot līdzjūtīgāku attieksmi pret sevi.'
+      ],
+      quote: 'Iekšējais kritiķis kādreiz bija veids, kā pasargāt sevi, taču šodien tu vari izvēlēties klausīties Veselīgā pieaugušā atbalstošajā balsī.',
+      conclusion: 'Ja jūti, ka iekšējā kritika vai perfekcionisma spiediens traucē ikdienā, shēmu terapija un individuālas konsultācijas var palīdzēt stiprināt Veselīgā pieaugušā balsi.'
+    }
+  },
+  {
     id: '1',
     slug: 'emdr-terapija-ka-ta-palidz-traumu-gadijumos',
     title: 'EMDR terapija: Kā tā palīdz apstrādāt traumas un samazināt trauksmi?',

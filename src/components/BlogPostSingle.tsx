@@ -122,6 +122,16 @@ export const BlogPostSingle: React.FC<BlogPostSingleProps> = ({
                 return;
               }
 
+              const navPost = (e.target as HTMLElement).closest('[data-navigate-post]');
+              if (navPost) {
+                e.preventDefault();
+                const targetSlug = navPost.getAttribute('data-navigate-post');
+                if (targetSlug) {
+                  onSelectPost(targetSlug);
+                  return;
+                }
+              }
+
               const navSection = (e.target as HTMLElement).closest('[data-navigate-section]');
               if (navSection) {
                 e.preventDefault();
