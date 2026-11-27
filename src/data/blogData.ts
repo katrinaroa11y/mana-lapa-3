@@ -299,7 +299,7 @@ body: 'Pirmajās sesijās psihologs uzmanīgi izvērtē klienta grūtības un si
     featuredImage: '/blog_schema_therapy_and_relationship_advice.jpg',
     featuredImageAlt: 'Iebraukta taka rudens pļavā ved pretī dzeltējošam kokam un meža malai',
     content: {
-      intro: 'Shēmu terapija ir psihoterapijas pieeja. Tā ir īpaši izstrādāta, lai strādātu ar dziļi iesakņotiem un traucējošiem uzvedības modeļiem.',
+      intro: 'Shēmu terapija ir psihoterapijas pieeja, kas izstrādāta, lai palīdzētu mainīt dziļi iesakņotus domāšanas, emocionālos un attiecību modeļus, kuri atkārtojas dzīves laikā un traucē labsajūtai. To izstrādāja amerikāņu psihologs un pētnieks Džefrijs Jangs un viņa kolēģi, apvienojot teoriju un metodes no KBT, psihoanalītiskās objektu attiecību teorijas, piesaistes teorijas un geštalta terapijas. Pēdējās desmitgadēs shēmu terapijas pētījumu bāze turpina pieaugt, un pieeja bieži tiek pieskaitīta kognitīvi biheiviorālās terapijas (KBT) trešajam vilnim.',
       sections: [
         {
           heading: 'Agrīnās shēmas',
@@ -308,8 +308,8 @@ body: 'Pirmajās sesijās psihologs uzmanīgi izvērtē klienta grūtības un si
             Kā tas notiek? Lai vizualizētu pārmaiņu procesu, iedomāsimies vīrieti, kurš atkārtoti atgrūž cilvēkus, kuri vēlas ar viņu veidot emocionāli tuvas attiecības. Viņam pašam var šķist, ka problēma galvenokārt ir citos cilvēkos. Speciālists palīdz <b>pamanīt situācijas, kurās šāda reakcija parādās, izpētīt, kas tajos brīžos notiek</b> ar viņa domām, emocijām un uzvedību. Tā vīrietis var pakāpeniski saprast, kādi dziļāki modeļi jeb shēmas to varētu ietekmēt. Piemēram, šāda reakcija var būt saistīta ar defektivitātes/kauna shēmu (vienkāršoti izsakoties - uzskats, ka es esmu nepareizs un neviens mani nemīlēs) vai kādu no aizsardzības režīmiem. Šī iztēlotā vīrieša gadījumā, aizsardzības režīms varētu likt atsvešināties, ja kāds piekļūst par tuvu un tas ļauj izvairīties no emocionālas ievainojamības. Izpētot savas dažādās daļas - tās, kuras palīdz un tās, kuras traucē - cilvēks var veidot jaunus veidus, kā reaģēt uz citiem cilvēkiem un sadzīvot ar sarežģītām emocijām. Līdz ar to dzīve kļūst mazliet saprotamāka un vieglāka.`
         },
         {
-          heading: 'Biežāk sastopamās shēmas',
-          body: 'Pie dažām no visbiežāk sastopamajām shēmām pieder Pamestība / Nestabilitāte (bailes, ka mīļotais cilvēks vai citi svarīgi cilvēki pametīs), Emocionālā deprivācija (sajūta, ka neviens cilvēku pa īstam nesaprot un viņa emocionālās vajadzības citi nespēs saprast) un Perfekcionisms (nepārtraukta spriedze un tiekšanās būt ideālam). Taču šīs ir tikai trīs no kopumā astoņpadsmit shēmām, kuras empīriski pierādījis ir Jangs un viņa kolēģi (2014).'
+          heading: 'Bieži sastopamās shēmas',
+          body: 'Dažas no bieži sastopamajām shēmām ir Pamestība/ Nestabilitāte (bailes, ka mīļotais cilvēks vai citi svarīgi cilvēki pametīs), Emocionālā deprivācija (sajūta, ka neviens cilvēku pa īstam nesaprot un viņa emocionālās vajadzības citi nespēs saprast) un Nepiekāpīgie standarti/Hiperkritiskums (nepārtraukta spriedze, perfekcionisms un tiekšanās būt ideālam). Taču šīs ir tikai trīs no kopumā astoņpadsmit shēmām, kuras izpētījis un aprakstījis ir Jangs un viņa kolēģi.'
         },
         {
           heading: 'Kādu rezultātu sagaidīt no shēmu terapijas?',
