@@ -107,7 +107,7 @@ Vai arī šeit:
   {
     id: '5',
     slug: 'ieksejais-kritikis-un-perfekcionisms-kapec-nekad-nav-gana-labi',
-    title: 'Iekšējais kritiķis un kāpēc ir sajūta, ka „nekad nav gana labi”?',
+    title: 'Iekšējais kritiķis un sajūta, ka „nekad nav gana labi”',
     author: 'Katrīna Rozenbaha',
     date: '2026. gads',
     dateISO: '2026-11-26',
@@ -122,7 +122,7 @@ Vai arī šeit:
       sections: [
         {
           heading: 'Katram galvā ir savs orķestris',
-          body: `Cilvēki vidēji dzird aptuveni 400 - 800 domu vārdu minūtē (!), un tas ir vairāk nekā 24 tūkstoši vārdu ik stundu. Skan daudz, vai ne? Liela daļa no tā ir mūsu iekšējais dialogs. Un svarīgs jautājums ir, <b>kādā noskaņā</b> skan šie vārdi - pozitīvā (‘’es ticu, ka man šis sanāks’’), neitrālā (‘’jānopērk piens’’; ‘’šis ir galds’’) un iedrošinošā (‘’nesanāca, bet es pamēģināšu vēlreiz’’) vai arī uzbrūkošā, kritizējošā, sodošā un vainojošā? Palīdzēt izprast šo iekšējo dialogu var <b>shēmu terapija</b>, ko izstrādājis Džefrijs Jangs. Lasi par shēmu terapiju vairāk <a href="/blogs/shemu-terapija-izprast-savus-uzvedibas-paternus" data-navigate-post="shemu-terapija-izprast-savus-uzvedibas-paternus" class="underline text-[#668261] font-medium hover:text-[#4F684B]">šeit</a>.
+          body: `Cilvēki vidēji dzird aptuveni 400 - 800 domu vārdu minūtē (!), un tas ir vairāk nekā 24 tūkstoši vārdu ik stundu. Skan daudz, vai ne? Liela daļa no tā ir mūsu iekšējais dialogs. Un svarīgs jautājums ir, <b>kādā noskaņā</b> skan šie vārdi - pozitīvā (‘’es ticu, ka man šis sanāks’’), neitrālā (tādā intonācijā kā fakts: ‘’jānopērk piens’’) un iedrošinošā (‘’nesanāca, bet es pamēģināšu vēlreiz’’) vai arī uzbrūkošā, kritizējošā, sodošā un vainojošā? Palīdzēt izprast šo iekšējo dialogu var <b>shēmu terapija</b>. Lasi par shēmu terapiju vairāk <a href="/blogs/shemu-terapija-izprast-savus-uzvedibas-paternus" data-navigate-post="shemu-terapija-izprast-savus-uzvedibas-paternus" class="underline text-[#668261] font-medium hover:text-[#4F684B]">šeit</a>.
 <b>Shēma</b> ir dziļi iesakņojies priekšstats un pārliecība par sevi, cilvēkiem un pasauli sev apkārt. Tā veidojas bērnībā.
 <b>Režīms</b> ir stāvoklis, kas uz brīdi pārņem mūsu domas, jūtas un uzvedību.
 Režīmu ir daudz. Sākotnēji aprakstīti aptuveni desmit, vēlāk speciālisti tos sīkāk izdalījuši vēl vairāk. Tāpēc bieži lieto salīdzinājumu: <b>katram galvā ir savs orķestris</b>, kurā spēlē dažādi dalībnieki. Šodien runāsim par diviem režīmiem:
@@ -131,7 +131,7 @@ Režīmu ir daudz. Sākotnēji aprakstīti aptuveni desmit, vēlāk speciālisti
         },
         {
           heading: 'Kas ir iekšējais kritiķis?',
-          body: `Iekšējais kritiķis ir tā daļa, kas mūs vērtē, kritizē un uzstāda pārmērīgas prasības. Tas rada kauna, nepietiekamības un trauksmes sajūtu. Kritiķis var būt prasīgs (sakot: ‘’tev jādara labāk!’’; ‘’šis nav pietiekami!’’) vai pat sodošs (ja tu neizdarīsi, tad tu neesi pelnījis cieņu!’’). Tas veidojas no bērnībā sevī pieņemtiem vecāku, autoritāšu un sabiedrības standartiem, un izpaužas kā stingra paškritika, perfekcionisms vai pat sevis sodīšana.`
+          body: `<b>Iekšējais kritiķis ir tā daļa, kas vērtē, kritizē un uzstāda pārmērīgas prasības.</b> Tas rada kauna, nepietiekamības un trauksmes sajūtu. Kritiķis var būt prasīgs (sakot: ‘’tev jādara labāk!’’; ‘’šis nav pietiekami!’’) vai pat sodošs (ja tu to neizdarīsi, tu nebūsi pelnījis cieņu!’’). Tas veidojas no bērnībā sevī pieņemtiem vecāku, autoritāšu un sabiedrības standartiem, un izpaužas kā stingra paškritika, perfekcionisms vai pat sevis sodīšana.`
         },
         {
           heading: 'Kā veidojas iekšējā kritika?',
@@ -151,7 +151,7 @@ Kritiķis rada spiedienu („tev jābūt labākam/labākai”) →
 → Perfekcionisms šo stresa un spiediena sajūtu mazina ar darbībām: izlabo vēlreiz, pastrādā ilgāk, atliec darīt, kamēr „nebūs ideāli”, vai nesāc vispār → 
 → Tādējādi perfekcionistiska uzvedība kļūst par mēģinājumu iegūt pieņemšanu, izvairīties no kauna vai kritikas un pasargāt sevi no ievainojamības → 
 → tas īslaicīgi mazina stresu un nomierina, bet prasības kļūst vēl augstākas, un loks sākas no jauna, līdz ar to spriedze un stress ilgtermiņā kāpj.
-Tādā veidā iekšējais kritiķis uztur un uzkurina perfekcionismu.`
+<b>Tādā veidā iekšējais kritiķis uztur un uzkurina perfekcionismu.</b>`
         },
         {
           heading: 'Kritiķis nav rakstura defekts',
@@ -162,7 +162,7 @@ Līdz ar to kritiķim ir arī gaišā puse. Tas var motivēt sasniegt augstus re
           heading: 'Ko darīt?',
           body: `<b>Nepadodies savam kritiķim.</b> Tev nav jāturpina vainot sevi, slīgt pašpārmetumos par senām kļūdām vai ik dienu izdomātiem jauniem trūkumiem.
 Sāc mazināt troksni, ko galvā rada iekšējais kritiķis. To vari darīt stiprinot kādu daudz nozīmīgāku balsi: savu <b>Veselīgo pieaugušo.</b> Tas ir tā iekšējā daļa, kas redz realitāti tādu, kāda tā ir (‘’fakti ir..’’), rūpējas par emocionālajām un praktiskajām vajadzībām (‘’es šodien paēdu/ izgulējos/ aizgāju pie sava psihologa, un tas ir gana pietiekami’’) un veselīgais pieaugušais spēj vadīt pārējos orķestra dalībniekus, jeb režīmus (iekšējo kritiķi, perfekcionistu, ievainoto bērnu u.t.t.).
-<b>Veselīgais pieaugušais ir tāds kā gādīgais vecāks</b>, kurš atbild par lēmumu pieņemšanu, robežu noteikšanu, veselīgu pašaprūpi un emociju izpaušanu. Viņa mērķis ir likt tev justies droši, mīlēti, būt līdzsvarā, ar veselīgu pašvērtējumu un līdzjūtību pret sevi. Stiprināt šo daļu var dažādos veidos, bet sākšu ar 2 konkrētiem uzdevumiem šodienai: 1) kritiķa iepazīšanu un 2) ‘’iečekošanos’’ ar sevi`
+<b>Veselīgais pieaugušais ir tāds kā gādīgais vecāks</b>, kurš atbild par lēmumu pieņemšanu, robežu noteikšanu, veselīgu pašaprūpi un emociju izpaušanu. Viņa mērķis ir likt tev justies droši, mīlētam/mīlētai, būt līdzsvarā, ar veselīgu pašvērtējumu un līdzjūtību pret sevi. Stiprināt šo daļu var dažādos veidos un par to kādu dienu arī taps raksts, bet pagaidām sākšu ar 2 konkrētiem, nelieliem uzdevumiem šodienai: 1) kritiķa iepazīšanu un 2) ‘’iečekošanos’’ ar sevi`
         },
         {
           heading: 'Uzdevums: iepazīsti savu kritiķi',
@@ -178,9 +178,7 @@ Sāc mazināt troksni, ko galvā rada iekšējais kritiķis. To vari darīt stip
 <b>„Šobrīd es jūtos …”</b>
 <b>„Šobrīd man ir vajadzīgs …”</b>
 
-Tas ir mazs veids, kā ik pa laikam (kaut vienu reizi dienā) ir iespējams dot vārdu tavam Veselīgajam pieaugušajam - viņa teiktajā sadzirdēsi savus priekus, bēdas, grūtības un izaicinājumus, kā arī nepieciešamos resursus un vajadzīgās robežas. Ieklausies, un Veselīgais pieaugušais atbildēs!
-
-<i>Šis raksts ir izglītojošs un nav speciālista aizstājējs. Ja iekšējā kritika vai spriedze kļūst smaga un grūti panesama, nebaidies meklēt speciālistu atbalstu.</i>`
+Tas ir mazs veids, kā ik pa laikam (kaut vienu reizi dienā) ir iespējams dot vārdu tavam Veselīgajam pieaugušajam - viņa teiktajā sadzirdēsi savus priekus, bēdas, grūtības un izaicinājumus, kā arī nepieciešamos resursus un vajadzīgās robežas. Ieklausies, un Veselīgais pieaugušais atbildēs!`
         }
       ],
       keyTakeaways: [
